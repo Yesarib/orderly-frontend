@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button, Typography } from "@material-tailwind/react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import routes from "../../routes";
+import Divider from "../Divider";
 
 interface OpenMenuState {
   [key: string]: boolean;
@@ -24,22 +25,25 @@ export function Sidenav() {
   return (
     <aside className="fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0 border border-blue-gray-200">
       <div className="relative">
-        <Link to={"/"} className="flex justify-center items-center gap-2 lg:mt-8 ">
-          <img
-            src="https://pbs.twimg.com/profile_images/1610066785025523713/2iij3ydV_400x400.jpg"
-            alt="logo"
-            className="w-8 rounded-full"
-          />
-          <Typography variant="h5" className="text-center font-sans lg:mt-1">
-            Orderly
-          </Typography>
+        <Link to={"/"} className="flex flex-col justify-center items-start gap-2 lg:mt-8 lg:ml-8 ">
+          <div className="flex gap-2">
+            <img
+              src="https://pbs.twimg.com/profile_images/1610066785025523713/2iij3ydV_400x400.jpg"
+              alt="logo"
+              className="w-8 rounded-full"
+            />
+            <Typography variant="h5" className="text-start font-sans lg:mt-1">
+              Orderly
+            </Typography>
+          </div>
+          <Typography variant="h5" className="text-gray-700"> Fibonacci </Typography>
         </Link>
       </div>
-      <hr />
+      <Divider height="0.5" color="gray-400" />
       <div className="m-4">
         {routes.map(({ layout, pages }, key) => (
-          <ul key={key} className="mb-4 flex flex-col gap-1">
-            {layout==='dashboard' && pages.map((page: any) => (
+          <ul key={key} className="mb-4 flex flex-col ">
+            {layout === 'dashboard' && pages.map((page: any) => (
               <li key={page.name}>
                 {page.subPaths ? (
                   <div>
@@ -58,10 +62,16 @@ export function Sidenav() {
                       fullWidth
                       onClick={() => toggleMenu(page.name)}
                     >
-                      <div className="text-2xl">{page.icon}</div>
-                      <Typography className="mt-1 font-roboto font-bold">
+                      <div className="text-xl">{page.icon}</div>
+                      <Typography className="text-sm font-roboto font-bold">
                         {page.name}
                       </Typography>
+                      <div
+                        className={`ml-auto transition-transform ${openMenu[page.name] ? "rotate-180" : "rotate-0"
+                          }`}
+                      >
+                        ▼ 
+                      </div>
                     </Button>
                     {openMenu[page.name] && (
                       <ul className="pl-8 mt-2 space-y-2">
@@ -75,9 +85,9 @@ export function Sidenav() {
                                   className="flex items-center gap-4 capitalize"
                                   fullWidth
                                 >
-                                  <div className="text-2xl">{subPath.icon}</div>
+                                  <div className="text-xl">{subPath.icon}</div>
 
-                                  <Typography className="mt-1 font-roboto">
+                                  <Typography className="font-roboto text-sm">
                                     {subPath.name}
                                   </Typography>
                                 </Button>
@@ -105,8 +115,8 @@ export function Sidenav() {
                         className="flex items-center gap-4 px-4 capitalize"
                         fullWidth
                       >
-                        <div className="text-2xl">{page.icon}</div>
-                        <Typography className="mt-1 font-roboto font-bold">
+                        <div className="text-xl">{page.icon}</div>
+                        <Typography className="text-sm font-roboto font-bold">
                           {page.name}
                         </Typography>
                       </Button>
