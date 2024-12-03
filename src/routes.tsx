@@ -18,7 +18,7 @@ export const routes = [
         pages: [
             {
                 icon: <IoMdHome />,
-                name: 'Gösterge Paneli',
+                name: 'Ana Sayfa',
                 path: '/home',
                 element: <Home />
             },
