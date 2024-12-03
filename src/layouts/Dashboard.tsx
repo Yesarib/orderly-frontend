@@ -13,8 +13,15 @@ const Dashboard = () => {
         <Routes>
           {routes.map(({ layout, pages }) =>
             layout === 'dashboard' &&
-            pages.map(({ path, element }) => (
-              <Route path={path} element={element} />
+            pages.map(({ path, element, subPaths }) => (
+              <>
+                {path && <Route path={path} element={element} />}
+
+                {subPaths &&
+                  subPaths.map(({ path: subPath, element: subElement }) => (
+                    <Route path={subPath} element={subElement} />
+                  ))}
+              </>
             ))
           )}
         </Routes>
