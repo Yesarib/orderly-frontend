@@ -8,7 +8,8 @@ interface DividerProp {
 const Divider: React.FC<DividerProp> = ({ height, color }) => {
     return (
         <div>
-            <hr className={`h-${height} bg-${color}`} />
+            <div className={`w-full h-${height} bg-${color}`}>
+            </div>
         </div>
     )
 }

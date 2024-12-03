@@ -32,14 +32,16 @@ export function Sidenav() {
               alt="logo"
               className="w-8 rounded-full"
             />
-            <Typography variant="h5" className="text-start font-sans lg:mt-1">
+            <Typography variant="h5" className="text-start font-serif lg:mt-1">
               Orderly
             </Typography>
           </div>
-          <Typography variant="h5" className="text-gray-700"> Fibonacci </Typography>
+          <Typography variant="h5" className="text-gray-700 font-serif lg:mt-2"> Fibonacci </Typography>
         </Link>
       </div>
-      <Divider height="0.5" color="gray-400" />
+      <div>
+        <Divider height="0.5" color="black" />
+      </div>
       <div className="m-4">
         {routes.map(({ layout, pages }, key) => (
           <ul key={key} className="mb-4 flex flex-col ">
@@ -55,22 +57,22 @@ export function Sidenav() {
                       }
                       color={
                         page.path && currentPath === page.path.split("/")[1]
-                          ? "black"
-                          : "blue-gray"
+                          ? "blue-gray"
+                          : "black"
                       }
                       className="flex items-center gap-4 px-4 capitalize"
                       fullWidth
                       onClick={() => toggleMenu(page.name)}
                     >
                       <div className="text-xl">{page.icon}</div>
-                      <Typography className="text-sm font-roboto font-bold">
+                      <Typography className="text-sm font-serif font-semibold ">
                         {page.name}
                       </Typography>
                       <div
                         className={`ml-auto transition-transform ${openMenu[page.name] ? "rotate-180" : "rotate-0"
                           }`}
                       >
-                        ▼ 
+                        ▼
                       </div>
                     </Button>
                     {openMenu[page.name] && (
@@ -81,13 +83,13 @@ export function Sidenav() {
                               {({ isActive }) => (
                                 <Button
                                   variant={isActive ? "gradient" : "text"}
-                                  color={isActive ? "black" : "blue-gray"}
+                                  color={isActive ? "blue-gray" : "black"}
                                   className="flex items-center gap-4 capitalize"
                                   fullWidth
                                 >
                                   <div className="text-xl">{subPath.icon}</div>
 
-                                  <Typography className="font-roboto text-sm">
+                                  <Typography className="font-serif font-semibold text-sm">
                                     {subPath.name}
                                   </Typography>
                                 </Button>
@@ -109,14 +111,14 @@ export function Sidenav() {
                         }
                         color={
                           page.path && currentPath === page.path.split("/")[1]
-                            ? "black"
-                            : "blue-gray"
+                            ? "blue-gray"
+                            : "black"
                         }
-                        className="flex items-center gap-4 px-4 capitalize"
+                        className={`flex items-center gap-4 px-4 capitalize`}
                         fullWidth
                       >
                         <div className="text-xl">{page.icon}</div>
-                        <Typography className="text-sm font-roboto font-bold">
+                        <Typography className="text-sm font-serif font-semibold">
                           {page.name}
                         </Typography>
                       </Button>

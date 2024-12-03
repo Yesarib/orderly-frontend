@@ -9,7 +9,9 @@ module.exports = withMT({
         sans: ['Poppins', 'sans-serif'],
         serif: ['Montserrat', 'serif'],
         mono: ['Raleway', 'monospace'],
-        roboto: ['Roboto', 'sans-serif']
+        roboto: ['Roboto', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        lato: ['Lato', 'sans-serif'],
       },
     },
   },

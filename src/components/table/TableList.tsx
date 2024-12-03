@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Card, CardBody, IconButton, Tab, TabPanel, Tabs, TabsBody, TabsHeader, Typography } from '@material-tailwind/react'
 import React, { useState } from 'react'
 import { MdEdit } from "react-icons/md";
@@ -20,14 +21,18 @@ interface TableListProps {
 const TableList: React.FC<TableListProps> = ({ areas }) => {
 
   const [activeTab, setActiveTab] = useState(areas[0]?._id || "");
+  console.log(activeTab);
 
   return (
     <div className='mt-4 w-full h-screen'>
-      <Tabs>
-        <TabsHeader>
+      <Tabs value={activeTab}>
+        <TabsHeader className="bg-transparent border-b"
+          indicatorProps={{
+            className: "bg-green-900/50 shadow-none",
+          }}>
           {areas.map((area) => (
             <Tab key={area._id} value={area._id} onClick={() => setActiveTab(area._id)}>
-              {area.name}
+              <Typography className={`font-serif font-semibold ${activeTab === area._id ? "text-white" : "text-gray-600"} tracking-wider`}> {area.name} </Typography>
             </Tab>
           ))}
         </TabsHeader>
@@ -35,15 +40,15 @@ const TableList: React.FC<TableListProps> = ({ areas }) => {
           {areas.map((area) => (
             <TabPanel key={area._id} value={area._id}>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 container mx-auto px-4">
-                {area.tables.map((table) => (
+                {activeTab && area.tables.map((table) => (
                   <Card key={table._id} className="h-36 cursor-move shadow-sm rounded-sm border shadow-gray-700">
                     <CardBody className='flex flex-col'>
                       <div className='flex justify-end'>
                         <IconButton variant='text'>
-                          <MdEdit className='text-xl text-green-600'/>
+                          <MdEdit className='text-xl text-green-600' />
                         </IconButton>
                       </div>
-                      <Typography className='text-center'>
+                      <Typography className='text-center font-inter'>
                         {table.name}
                       </Typography>
                     </CardBody>
