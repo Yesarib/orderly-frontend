@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useState } from "react";
 import { Button, Typography } from "@material-tailwind/react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import routes from "../../routes";
@@ -38,7 +39,7 @@ export function Sidenav() {
       <div className="m-4">
         {routes.map(({ layout, pages }, key) => (
           <ul key={key} className="mb-4 flex flex-col gap-1">
-            {pages.map((page: any) => (
+            {layout==='dashboard' && pages.map((page: any) => (
               <li key={page.name}>
                 {page.subPaths ? (
                   <div>
@@ -89,7 +90,7 @@ export function Sidenav() {
                   </div>
                 ) : (
                   <NavLink to={`/${layout}${page.path}`}>
-                    {({ isActive }) => (
+                    {() => (
                       <Button
                         variant={
                           page.path && currentPath === page.path.split("/")[1]

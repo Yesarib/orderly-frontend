@@ -10,6 +10,7 @@ import Order from "./pages/dashboard/Order";
 import Table from "./pages/dashboard/Table";
 import Product from "./pages/dashboard/Product";
 import Analytic from "./pages/dashboard/Analytic";
+import SignIn from "./pages/auth/SignIn";
 
 export const routes = [
     {
@@ -55,7 +56,13 @@ export const routes = [
     },
     {
         layout: 'auth',
-        pages: []
+        pages: [
+            {
+                name:'Giriş',
+                path:'/sign-in',
+                element: <SignIn />
+            }
+        ]
     }
 ]
 
