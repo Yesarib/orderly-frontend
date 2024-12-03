@@ -11,8 +11,34 @@ import Table from "./pages/dashboard/Table";
 import Product from "./pages/dashboard/Product";
 import Analytic from "./pages/dashboard/Analytic";
 import SignIn from "./pages/auth/SignIn";
+import { ReactElement } from "react";
 
-export const routes = [
+
+interface RouteBase {
+    icon?: ReactElement;
+    name: string;
+}
+
+interface MainRoute extends RouteBase {
+    path: string;
+    element: ReactElement;
+    subPaths?: undefined;
+}
+
+interface SubRoute extends RouteBase {
+    subPaths: {
+        icon: ReactElement;
+        name: string;
+        path: string;
+        element: ReactElement;
+    }[];
+    path?: undefined;
+    element?: undefined;
+}
+
+type Route = MainRoute | SubRoute;
+
+export const routes: { layout: string; pages: Route[] }[] = [
     {
         layout: 'dashboard',
         pages: [
@@ -36,13 +62,13 @@ export const routes = [
                         icon: <HiOutlineTableCells />,
                         name: 'Masalar',
                         path: '/tables',
-                        element: <Table />  
+                        element: <Table />
                     },
                     {
                         icon: <GiForkKnifeSpoon />,
                         name: 'Ürünler',
                         path: '/products',
-                        element: <Product />  
+                        element: <Product />
                     },
                 ]
             },
@@ -58,8 +84,8 @@ export const routes = [
         layout: 'auth',
         pages: [
             {
-                name:'Giriş',
-                path:'/sign-in',
+                name: 'Giriş',
+                path: '/sign-in',
                 element: <SignIn />
             }
         ]
