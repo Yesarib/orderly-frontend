@@ -44,12 +44,13 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ categories, setCurren
                 <hr />
             </div>
 
-            <div className="flex flex-col mt-4 overflow-y-auto scroll-smooth">
+            <div className="flex flex-col mt-4">
                 {categories.map((category) => (
                     <Button 
                         onClick={() => setCurrentCategory(category.id)} 
                         key={category.id} 
                         variant="text" 
+                        style={{ width: 'auto', height: 'auto', padding: '0.5rem 1rem' }}
                         className={`flex m-2 justify-between items-center capitalize ${currentCategory === category.id ? "bg-gray-300 " : ""}`}
                     >
                         <div className="flex gap-1">
@@ -59,7 +60,7 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ categories, setCurren
                         <div>
                             <Menu>
                                 <MenuHandler>
-                                    <Button variant="text">
+                                    <Button variant="text" className="w-8 h-8 p-0 flex justify-center items-center">
                                         <SlOptionsVertical />
                                     </Button>
                                 </MenuHandler>
