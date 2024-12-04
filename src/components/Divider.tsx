@@ -1,14 +1,16 @@
 import React from 'react'
 
 interface DividerProp {
-    height: string,
+    height: number,
     color: string
 }
 
 const Divider: React.FC<DividerProp> = ({ height, color }) => {
     return (
-        <div>
-            <hr className={`h-${height} bg-${color}`} />
+        <div style={{
+            height: height,
+            backgroundColor: color,
+        }}>
         </div>
     )
 }

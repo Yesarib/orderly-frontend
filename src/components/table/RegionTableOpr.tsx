@@ -59,7 +59,7 @@ const RegionTableOpr = () => {
                     onClick={() => handleOperationClick(opr)}
                 >
                     <div className="text-2xl text-green-600"> {opr.icon} </div>
-                    <Typography className="font-semibold " variant="small"> {opr.name} </Typography>
+                    <Typography className="font-semibold font-serif" variant="small"> {opr.name} </Typography>
                 </Button>
             ))}
             {isModalOpen && currentOperation && (
