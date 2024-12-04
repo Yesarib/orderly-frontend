@@ -1,9 +1,8 @@
-import { IoMdHome } from "react-icons/io";
-import { BsBorderStyle } from "react-icons/bs";
-import { FaCheckSquare } from "react-icons/fa";
+import { IoHomeOutline } from "react-icons/io5";
+import { RiListIndefinite } from "react-icons/ri";
 import { HiOutlineTableCells } from "react-icons/hi2";
 import { GiForkKnifeSpoon } from "react-icons/gi";
-import { TbReportAnalytics } from "react-icons/tb";
+import { TbReportAnalytics, TbShoppingBagCheck } from "react-icons/tb";
 
 import Home from "./pages/dashboard/Home"
 import Order from "./pages/dashboard/Order";
@@ -43,19 +42,19 @@ export const routes: { layout: string; pages: Route[] }[] = [
         layout: 'dashboard',
         pages: [
             {
-                icon: <IoMdHome />,
+                icon: <IoHomeOutline />,
                 name: 'Ana Sayfa',
                 path: '/home',
                 element: <Home />
             },
             {
-                icon: <BsBorderStyle />,
+                icon: <TbShoppingBagCheck />,
                 name: 'Siparişler',
                 path: '/orders',
                 element: <Order />
             },
             {
-                icon: <FaCheckSquare />,
+                icon: <RiListIndefinite />,
                 name: 'Tanımlamalar',
                 subPaths: [
                     {

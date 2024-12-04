@@ -40,7 +40,7 @@ export function Sidenav() {
         </Link>
       </div>
       <div>
-        <Divider height="0.5" color="black" />
+        <Divider height={1} color="#757575" />
       </div>
       <div className="m-4">
         {routes.map(({ layout, pages }, key) => (

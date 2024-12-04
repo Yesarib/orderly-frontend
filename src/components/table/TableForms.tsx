@@ -48,7 +48,7 @@ const TableForms: React.FC<TableFormsProps> = ({ operation, isOpen, handleOpen, 
         <Button variant="text" color="red" onClick={handleOpen} className="capitalize">
           İptal
         </Button>
-        <Button variant="gradient" color="blue" onClick={handleSubmit} className="capitalize">
+        <Button variant="gradient" color="green" onClick={handleSubmit} className="capitalize">
           Kaydet
         </Button>
       </DialogFooter>
