@@ -110,6 +110,56 @@ export const categories = [
         title: "Soğuk İçecekler",
         color: 'aqua'
     },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
 ]
 
 export const products = [
