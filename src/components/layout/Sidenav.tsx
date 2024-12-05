@@ -23,7 +23,7 @@ export function Sidenav() {
   };
 
   return (
-    <aside className="fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0 border border-blue-gray-200">
+    <aside className="fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-sm transition-transform duration-300 xl:translate-x-0 border border-blue-gray-200">
       <div className="relative">
         <Link to={"/"} className="flex flex-col justify-center items-start gap-2 lg:mt-8 lg:ml-8 ">
           <div className="flex gap-2">
@@ -39,10 +39,10 @@ export function Sidenav() {
           <Typography variant="h5" className="text-gray-700 font-serif lg:mt-2"> Fibonacci </Typography>
         </Link>
       </div>
-      <div>
-        <Divider height={1} color="#757575" />
+      <div className="px-4 mt-2">
+        <Divider color="gray-400" height="2" />
       </div>
-      <div className="m-4">
+      <div className="mt-2 mx-2">
         {routes.map(({ layout, pages }, key) => (
           <ul key={key} className="mb-4 flex flex-col ">
             {layout === 'dashboard' && pages.map((page: any) => (
@@ -106,15 +106,15 @@ export function Sidenav() {
                       <Button
                         variant={
                           page.path && currentPath === page.path.split("/")[1]
-                            ? "gradient"
+                            ? "text"
                             : "text"
                         }
-                        color={
-                          page.path && currentPath === page.path.split("/")[1]
-                            ? "blue-gray"
-                            : "black"
-                        }
-                        className={`flex items-center gap-4 px-4 capitalize`}
+                        // color={
+                        //   page.path && currentPath === page.path.split("/")[1]
+                        //     ? "blue-gray"
+                        //     : "black"
+                        // }
+                        className={`flex items-center gap-4 px-4 capitalize ${page.path && currentPath === page.path.split('/')[1] ? "bg-green-900/50 text-white" : ""}`}
                         fullWidth
                       >
                         <div className="text-xl">{page.icon}</div>

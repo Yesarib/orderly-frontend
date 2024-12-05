@@ -1,17 +1,13 @@
 import React from 'react'
 
 interface DividerProp {
-    height: number,
+    height: string,
     color: string
 }
 
 const Divider: React.FC<DividerProp> = ({ height, color }) => {
     return (
-        <div style={{
-            height: height,
-            backgroundColor: color,
-        }}>
-        </div>
+        <hr className={`my-2 border-t-${height} border-${color} rounded-full`} />
     )
 }
 

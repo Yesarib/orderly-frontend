@@ -37,9 +37,9 @@ const TableList: React.FC<TableListProps> = ({ areas }) => {
         <TabsBody className='w-full h-screen' >
           {areas.map((area) => (
             <TabPanel key={area._id} value={area._id}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 container mx-auto px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-8 mx-auto ">
                 {activeTab && area.tables.map((table) => (
-                  <Card key={table._id} className="h-36 cursor-move shadow-sm rounded-sm border shadow-gray-700">
+                  <Card key={table._id} className="h-36 cursor-move shadow-sm rounded-md border shadow-gray-700">
                     <CardBody className='flex flex-col'>
                       <div className='flex justify-end'>
                         <IconButton variant='text'>
