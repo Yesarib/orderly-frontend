@@ -38,9 +38,9 @@ const Orders: React.FC<OrdersProps> = ({ orders }) => {
 
     return (
         <div className="flex justify-center items-center lg:mt-8">
-            <div className="lg:w-3/5 flex lg:gap-4">
+            <div className="lg:w-3/5 lg:flex lg:gap-4">
                 <Card className="w-full h-screen flex flex-col border border-gray-400/50 rounded-lg">
-                    <CardHeader className="">
+                    <CardHeader className="flex justify-center items-center p-2 lg:justify-start lg:items-center lg:p-0">
                         <div className="flex gap-2 lg:p-4">
                             <div className="lg:w-12 lg:h-10 flex justify-center items-center bg-gradient-to-b from-green-600 to-green-300 rounded-md shadow-md shadow-gray-400">
                                 <CiTimer className="text-white font-bold text-3xl" />
@@ -52,8 +52,8 @@ const Orders: React.FC<OrdersProps> = ({ orders }) => {
                     </CardHeader>
                     <CardBody>
                         {orders.map((order) => (
-                            <div key={order.id} className="w-full flex lg:gap-8 lg:p-6 border border-gray-400/50 rounded-lg lg:mt-4">
-                                <div className="w-full flex flex-col justify-center items-center gap-2 flex-1">
+                            <div key={order.id} className="w-full flex lg:gap-8 gap-2 lg:p-6 border border-gray-400/50 rounded-lg mt-4">
+                                <div className="w-full flex flex-col justify-center items-center gap-2 p-4">
                                     <Typography className="text-red-500 font-bold font-inter" variant="small"> 01:25:00 </Typography>
                                     <div className="flex lg:mt-4 text-green-600 text-2xl">
                                         <MdChair />
