@@ -12,9 +12,9 @@ interface OrderSidenavProps {
     tableId: string
 }
 
-const OrderSidenav: React.FC<OrderSidenavProps> = ({ order, totalAmount,tableId }) => {
+const OrderSidenav: React.FC<OrderSidenavProps> = ({ order, totalAmount, tableId }) => {
     return (
-        <div className="flex flex-col h-full border shadow-sm shadow-gray-800">
+        <div className="sticky h-full lg:w-[28rem] inset-0 z-50 flex flex-col border shadow-sm shadow-gray-800">
             <div className="w-full flex bg-gray-600/80">
                 <div className="w-full flex gap-4 p-4 items-center ">
                     <Link to={'/dashboard/orders'}>
