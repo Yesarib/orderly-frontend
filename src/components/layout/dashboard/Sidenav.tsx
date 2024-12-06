@@ -2,8 +2,8 @@
 import { useState } from "react";
 import { Button, Typography } from "@material-tailwind/react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import routes from "../../routes";
-import Divider from "../Divider";
+import routes from "../../../routes";
+import Divider from "../../Divider";
 
 interface OpenMenuState {
   [key: string]: boolean;

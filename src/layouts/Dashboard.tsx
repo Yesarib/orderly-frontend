@@ -1,5 +1,5 @@
-import Navbar from "../components/layout/Navbar"
-import Sidenav from "../components/layout/Sidenav"
+import Navbar from "../components/layout/dashboard/Navbar"
+import Sidenav from "../components/layout/dashboard/Sidenav"
 import { Routes, Route } from "react-router-dom";
 import routes from "../routes";
 // import Footer from "../components/layout/Footer";

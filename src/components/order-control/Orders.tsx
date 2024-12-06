@@ -60,7 +60,7 @@ const Orders: React.FC<OrdersProps> = ({ orders }) => {
                                         <MdTableBar />
                                         <MdChair />
                                     </div>
-                                    <Link to={`/order/${order.id}`} className="mt-4">
+                                    <Link to={`/order/${order.tableId}`} className="mt-4">
                                         <Typography variant="small" className="font-inter font-semibold"> Sipariş Detayı </Typography>
                                     </Link>
                                 </div>

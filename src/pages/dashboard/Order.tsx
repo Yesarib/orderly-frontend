@@ -1,41 +1,13 @@
-import { Tab, TabPanel, Tabs, TabsBody, TabsHeader, Typography } from "@material-tailwind/react";
-import { useState } from "react";
-import Area from "../../components/order/Area";
-import Orders from "../../components/order/Orders";
-import { orders } from "../../mock_data";
+import React from 'react'
+import { useParams } from 'react-router-dom';
 
 const Order = () => {
-  const [activeTab, setActiveTab] = useState('area');
-
+  const { tableId } = useParams();
+  console.log(tableId);
 
   return (
-    <div className='w-full flex flex-col lg:mt-4'>
-      <Tabs value={activeTab}>
-        <div className="w-1/3">
-          <TabsHeader className="bg-transparent border-b w-auto mx-auto"
-            indicatorProps={{
-              className: "bg-green-900/50 shadow-none",
-            }}>
-            <Tab value={"area"} onClick={() => setActiveTab('area')}>
-              <Typography className={`font-inter font-semibold ${activeTab === 'area' ? "text-white" : "text-gray-600"} tracking-wider`}> Bölgeler </Typography>
-            </Tab>
-            <Tab value={"orders"} onClick={() => setActiveTab('orders')}>
-              <Typography className={`font-inter font-semibold ${activeTab === 'orders' ? "text-white" : "text-gray-600"} tracking-wider`}> Siparişler </Typography>
-            </Tab>
-          </TabsHeader>
-        </div>
-        <TabsBody>
-          <TabPanel value={activeTab}>
-            {activeTab === "area" ? (
-              <Area />
-            ) : (
-              <Orders orders={orders} />
-            )}
-          </TabPanel>
-        </TabsBody>
-      </Tabs>
-    </div>
+    <div className='w-full'>Order</div>
   )
 }
 
-export default Order;
+export default Order

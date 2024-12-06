@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { areas, orders, products } from '../../mock_data';
 import { SlOptionsVertical } from 'react-icons/sl';
 import { calculateTotalPrice } from '../../utils/calc-total-price';
+import { Link } from 'react-router-dom';
 
 
 
@@ -38,27 +39,29 @@ const Area = () => {
                           key={table._id}
                           className={`h-36 cursor-pointer rounded-md border border-gray-500/50 shadow-gray-500/50 ${orderForTable ? "bg-red-500/50" : ""}`}
                         >
-                          <CardBody className='flex flex-col'>
-                            <div className='flex px-1 justify-between items-center'>
-                              <div className='flex flex-col -space-y-0.5'>
-                                <Typography className='text-start font-inter font-semibold'>
-                                  {table.name}
-                                </Typography>
-                                <Typography variant='small' className={`font-inter ${orderForTable ? "flex" : "hidden"}`}> User Name </Typography>
+                          <Link to={`/order/${table._id}`}>
+                            <CardBody className='flex flex-col'>
+                              <div className='flex px-1 justify-between items-center'>
+                                <div className='flex flex-col -space-y-0.5'>
+                                  <Typography className='text-start font-inter font-semibold'>
+                                    {table.name}
+                                  </Typography>
+                                  <Typography variant='small' className={`font-inter ${orderForTable ? "flex" : "hidden"}`}> User Name </Typography>
+                                </div>
+                                <div className='flex justify-end'>
+                                  <IconButton variant='text'>
+                                    <SlOptionsVertical className='text-md' />
+                                  </IconButton>
+                                </div>
                               </div>
-                              <div className='flex justify-end'>
-                                <IconButton variant='text'>
-                                  <SlOptionsVertical className='text-md' />
-                                </IconButton>
+                              <div className={`lg:mt-4 justify-center items-center ${orderForTable ? "flex" : "hidden"}`}>
+                                <Typography className='text-black font-inter font-bold text-lg'> ₺{totalPrice.toFixed(2)} </Typography>
                               </div>
-                            </div>
-                            <div className={`lg:mt-4 justify-center items-center ${orderForTable ? "flex" : "hidden"}`}>
-                              <Typography className='text-black font-inter font-bold text-lg'> ₺{totalPrice.toFixed(2)} </Typography>
-                            </div>
-                            <div className={`${orderForTable ? "flex" : "hidden"}`}>
-                              <Typography variant='small' className='font-inter'> 2s 32dk </Typography>
-                            </div>
-                          </CardBody>
+                              <div className={`${orderForTable ? "flex" : "hidden"}`}>
+                                <Typography variant='small' className='font-inter'> 2s 32dk </Typography>
+                              </div>
+                            </CardBody>
+                          </Link>
                         </Card>
                       ) : (
                         <Card
