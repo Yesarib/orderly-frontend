@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Card, CardBody, IconButton, Tab, TabPanel, Tabs, TabsBody, TabsHeader, Typography } from '@material-tailwind/react'
 import React, { useState } from 'react'
 import { MdEdit } from "react-icons/md";
@@ -21,7 +20,6 @@ interface TableListProps {
 const TableList: React.FC<TableListProps> = ({ areas }) => {
 
   const [activeTab, setActiveTab] = useState(areas[0]?._id || "");
-  console.log(activeTab);
 
   return (
     <div className='mt-4 w-full h-screen'>
@@ -32,16 +30,16 @@ const TableList: React.FC<TableListProps> = ({ areas }) => {
           }}>
           {areas.map((area) => (
             <Tab key={area._id} value={area._id} onClick={() => setActiveTab(area._id)}>
-              <Typography className={`font-serif font-semibold ${activeTab === area._id ? "text-white" : "text-gray-600"} tracking-wider`}> {area.name} </Typography>
+              <Typography className={`font-inter font-semibold ${activeTab === area._id ? "text-white" : "text-gray-600"} tracking-wider`}> {area.name} </Typography>
             </Tab>
           ))}
         </TabsHeader>
         <TabsBody className='w-full h-screen' >
           {areas.map((area) => (
             <TabPanel key={area._id} value={area._id}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 container mx-auto px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-8 mx-auto ">
                 {activeTab && area.tables.map((table) => (
-                  <Card key={table._id} className="h-36 cursor-move shadow-sm rounded-sm border shadow-gray-700">
+                  <Card key={table._id} className="h-36 cursor-move shadow-sm rounded-md border shadow-gray-700">
                     <CardBody className='flex flex-col'>
                       <div className='flex justify-end'>
                         <IconButton variant='text'>

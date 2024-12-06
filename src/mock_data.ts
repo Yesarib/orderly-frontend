@@ -6,7 +6,7 @@ export const todaysTotalExpedntirue = 1250.00
 
 export const areas = [
     {
-        _id: "1",
+        _id: 1,
         name: "Salon",
         tables: [
             {
@@ -36,7 +36,7 @@ export const areas = [
         ]
     },
     {
-        _id: "2",
+        _id: 2,
         name: "Bahçe",
         tables: [
             {
@@ -66,7 +66,7 @@ export const areas = [
         ]
     },
     {
-        _id: "3",
+        _id: 3,
         name: "Üst Kat",
         tables: [
             {
@@ -104,6 +104,66 @@ export const categories = [
         id: 3,
         title: "Kahveler",
         color: 'brown'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
+    },
+    {
+        id: 4,
+        title: "Soğuk İçecekler",
+        color: 'aqua'
     },
     {
         id: 4,
@@ -176,4 +236,40 @@ export const products = [
         price: 100.00,
         unit: "Adet"
     },
+]
+
+export const orders = [
+    {
+        id: 1,
+        areaId: 1,
+        tableId: "s1",
+        items: [
+            {
+                productId: 1,
+                quantity: 2
+            },
+            {
+                productId: 2,
+                quantity: 3
+            },
+        ],
+        status: "preparing",
+    },
+    {
+        id: 2,
+        areaId: 2,
+        tableId: "b4",
+        items: [
+            {
+                productId: 4,
+                quantity: 2
+            },
+            {
+                productId: 2,
+                quantity: 3
+            },
+        ],
+        status: "preparing",
+    },
+
 ]
