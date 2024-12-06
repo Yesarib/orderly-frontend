@@ -14,11 +14,11 @@ const OrderNavbar: React.FC<OrderNavbarProps> = ({ order }) => {
         <Input
           type="text"
           placeholder="Ürün Adı ile Arama"
-          className="rounded-none ring-4 ring-transparent placeholder:text-gray-800 placeholder:opacity-100 placeholder:text-xl placeholder:font-inter"
+          className="rounded-none  text-xl ring-4 ring-transparent placeholder:text-gray-800 placeholder:opacity-100 placeholder:text-xl placeholder:font-inter"
           labelProps={{
             className: "hidden",
           }}
-          containerProps={{ className: "lg:h-[60px] " }} crossOrigin={undefined} />
+          containerProps={{ className: "lg:h-[60px]" }} crossOrigin={undefined} />
       </div>
       <div className="flex relative">
         <div className="group relative flex justify-center items-center">

@@ -14,9 +14,9 @@ interface OrderSidenavProps {
 
 const OrderSidenav: React.FC<OrderSidenavProps> = ({ order, totalAmount,tableId }) => {
     return (
-        <div className="flex flex-col h-full border shadow-md shadow-gray-800">
-            <div className="flex">
-                <div className="w-full flex gap-4 p-4 items-center bg-gray-600/80">
+        <div className="flex flex-col h-full border shadow-sm shadow-gray-800">
+            <div className="w-full flex bg-gray-600/80">
+                <div className="w-full flex gap-4 p-4 items-center ">
                     <Link to={'/dashboard/orders'}>
                         <FaAngleLeft className="text-xl text-white" />
                     </Link>
@@ -35,7 +35,7 @@ const OrderSidenav: React.FC<OrderSidenavProps> = ({ order, totalAmount,tableId 
                     {order?.items.map((item, index) => {
                         const product = products.find((prod) => prod.id === item.productId);
                         return (
-                            <Button variant="text" fullWidth key={index} className="capitalize flex flex-col lg:mt-8 border-b">
+                            <Button variant="text" fullWidth key={index} className="capitalize flex flex-col lg:mt-4 border-b">
                                 <div className="w-full flex justify-between items-center">
                                     <div className="flex gap-4">
                                         <div className="flex justify-center items-center">

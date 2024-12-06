@@ -8,7 +8,7 @@ interface Table {
 }
 
 interface Area {
-  _id: string;
+  _id: number;
   name: string;
   tables: Table[];
 }
