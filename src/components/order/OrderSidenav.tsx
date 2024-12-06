@@ -1,21 +1,18 @@
 import { Button, IconButton, Typography } from "@material-tailwind/react";
 import { FaAngleLeft } from "react-icons/fa6";
-import { Link, useLocation } from "react-router-dom";
-import { orders, products } from "../../../mock_data";
+import { Link } from "react-router-dom";
+import { products } from "../../mock_data";
 import { SlOptionsVertical } from "react-icons/sl";
+import React from "react";
+import { Order } from "../../types/Order";
 
-const OrderSidenav = () => {
-    const location = useLocation();
-    const tableId = location.pathname.split('/order/')[1];
+interface OrderSidenavProps {
+    order: Order | undefined,
+    totalAmount: number | undefined,
+    tableId: string
+}
 
-    const order = orders.find((order) => order.tableId === tableId);
-
-    // Toplam Tutar Hesaplama
-    const totalAmount = order?.items.reduce((total, item) => {
-        const product = products.find((prod) => prod.id === item.productId);
-        return total + (product?.price || 0) * item.quantity;
-    }, 0);
-
+const OrderSidenav: React.FC<OrderSidenavProps> = ({ order, totalAmount,tableId }) => {
     return (
         <div className="flex flex-col h-full border shadow-md shadow-gray-800">
             <div className="flex">
