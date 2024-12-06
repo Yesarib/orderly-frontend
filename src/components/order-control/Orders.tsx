@@ -7,19 +7,8 @@ import { SlOptions } from "react-icons/sl";
 import { IoPrintSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { products } from "../../mock_data";
+import { Order } from "../../types/Order";
 
-interface Items {
-    productId: number,
-    quantity: number
-}
-
-interface Order {
-    id: number,
-    areaId: number,
-    tableId: string,
-    items: Items[],
-    status: string
-}
 
 interface OrdersProps {
     orders: Order[]

@@ -1,17 +1,8 @@
 import { Card, CardBody, IconButton, Tab, TabPanel, Tabs, TabsBody, TabsHeader, Typography } from '@material-tailwind/react'
 import React, { useState } from 'react'
 import { MdEdit } from "react-icons/md";
+import { Area } from '../../types/area';
 
-interface Table {
-  _id: string
-  name: string;
-}
-
-interface Area {
-  _id: number;
-  name: string;
-  tables: Table[];
-}
 
 interface TableListProps {
   areas: Area[];
