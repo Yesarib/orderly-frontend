@@ -45,7 +45,6 @@ const CategoryProducts: React.FC<CategoryProductsProps> = ({ categoryId, order, 
         if (order) {
             const updatedOrder = { ...order };
             const productIndex = updatedOrder.items.findIndex((item) => item.productId === productId);
-            console.log(updatedOrder.items[productIndex]);
 
             if (productIndex !== -1 && updatedOrder.items[productIndex].quantity > 1) {
                 updatedOrder.items[productIndex].quantity -= 1;

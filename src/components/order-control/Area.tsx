@@ -64,18 +64,20 @@ const Area = () => {
                           </Link>
                         </Card>
                       ) : (
-                        <Card
-                          key={table._id}
-                          className={`flex justify-center items-center h-36 cursor-pointer rounded-md border border-gray-500/50 shadow-gray-500/50`}
-                        >
-                          <CardBody className='flex flex-col justify-center items-center'>
-                            <div className='flex justify-center items-center'>
-                              <Typography className='text-center font-inter font-semibold'>
-                                {table.name}
-                              </Typography>
-                            </div>
-                          </CardBody>
-                        </Card>
+                        <Link to={`/order/${table._id}`}>
+                          <Card
+                            key={table._id}
+                            className={`flex justify-center items-center h-36 cursor-pointer rounded-md border border-gray-500/50 shadow-gray-500/50`}
+                          >
+                            <CardBody className='flex flex-col justify-center items-center'>
+                              <div className='flex justify-center items-center'>
+                                <Typography className='text-center font-inter font-semibold'>
+                                  {table.name}
+                                </Typography>
+                              </div>
+                            </CardBody>
+                          </Card>
+                        </Link>
                       )}
                     </div>
                   );

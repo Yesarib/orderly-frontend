@@ -7,7 +7,7 @@ import { SlOptions } from "react-icons/sl";
 import { IoPrintSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { products } from "../../mock_data";
-import { Order } from "../../types/Order";
+import { Order } from "../../types/order";
 
 
 interface OrdersProps {

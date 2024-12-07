@@ -3,6 +3,8 @@ import { RiListIndefinite } from "react-icons/ri";
 import { HiOutlineTableCells } from "react-icons/hi2";
 import { GiForkKnifeSpoon } from "react-icons/gi";
 import { TbReportAnalytics, TbShoppingBagCheck  } from "react-icons/tb";
+import { FaKitchenSet } from "react-icons/fa6";
+
 
 import Home from "./pages/dashboard/Home"
 import OrderControl from "./pages/dashboard/OrderControl";
@@ -11,6 +13,7 @@ import Product from "./pages/dashboard/Product";
 import Analytic from "./pages/dashboard/Analytic";
 import SignIn from "./pages/auth/SignIn";
 import { ReactElement } from "react";
+import Kitchen from "./pages/dashboard/Kitchen";
 
 
 interface RouteBase {
@@ -72,11 +75,18 @@ export const routes: { layout: string; pages: Route[] }[] = [
                 ]
             },
             {
+                icon: <FaKitchenSet />,
+                name:"Mutfak",
+                path:"/kitchen",
+                element: <Kitchen />
+            },
+            {
                 icon: <TbReportAnalytics />,
                 name: 'Raporlar',
                 path: '/analytics',
                 element: <Analytic />
             },
+            
         ]
     },
     {
