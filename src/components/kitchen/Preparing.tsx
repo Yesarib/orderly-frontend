@@ -27,12 +27,12 @@ const Preparing: React.FC<PreparingProps> = ({ orders }) => {
                                                 <MdChair />
                                             </div>
                                             <div className="flex flex-col">
-                                                <Typography className="font-inter font-semibold"> username </Typography>
-                                                <Typography className="font-inter"> {area?.name} / {table?.name} </Typography>
+                                                <Typography className="font-inter font-semibold" variant='small'> username </Typography>
+                                                <Typography className="font-inter" variant='small'> {area?.name} / {table?.name} </Typography>
                                             </div>
                                         </div>
                                         <div className="">
-                                            <Button className="flex gap-2 items-center border h-10 capitalize rounded-sm shadow-none bg-gray-200 text-gray-800" variant="filled">
+                                            <Button className="flex gap-2 items-center border h-10 capitalize rounded-md shadow-none bg-gray-200 text-gray-800" variant="filled">
                                                 <Typography className="font-inter font-semibold" variant='small'> Tümü Hazır </Typography>
                                             </Button>
                                         </div>
@@ -59,7 +59,7 @@ const Preparing: React.FC<PreparingProps> = ({ orders }) => {
                                                             </div>
                                                         </div>
                                                         <div className="mt-5">
-                                                            <Button className="flex gap-2 items-center border h-10 capitalize rounded-sm shadow-none bg-gray-200 text-gray-800" variant="filled">
+                                                            <Button className="flex gap-2 items-center border h-10 capitalize rounded-md shadow-none bg-gray-200 text-gray-800" variant="filled">
                                                                 <Typography className="font-inter font-semibold" variant='small'> Hazır </Typography>
                                                             </Button>
                                                         </div>

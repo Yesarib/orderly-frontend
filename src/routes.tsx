@@ -1,9 +1,11 @@
-import { IoHomeOutline } from "react-icons/io5";
+import { IoHomeOutline, IoPersonOutline } from "react-icons/io5";
 import { RiListIndefinite } from "react-icons/ri";
 import { HiOutlineTableCells } from "react-icons/hi2";
 import { GiForkKnifeSpoon } from "react-icons/gi";
-import { TbReportAnalytics, TbShoppingBagCheck  } from "react-icons/tb";
+import { TbReportAnalytics, TbShoppingBagCheck } from "react-icons/tb";
 import { CgScreen } from "react-icons/cg";
+import { MdOutlineSecurity } from "react-icons/md";
+
 
 
 import Home from "./pages/dashboard/Home"
@@ -14,6 +16,8 @@ import Analytic from "./pages/dashboard/Analytic";
 import SignIn from "./pages/auth/SignIn";
 import { ReactElement } from "react";
 import Kitchen from "./pages/dashboard/Kitchen";
+import Person from "./pages/dashboard/Person";
+import Authorize from "./pages/dashboard/Authorize";
 
 
 interface RouteBase {
@@ -76,8 +80,8 @@ export const routes: { layout: string; pages: Route[] }[] = [
             },
             {
                 icon: <CgScreen />,
-                name:"Mutfak",
-                path:"/kitchen",
+                name: "Mutfak",
+                path: "/kitchen",
                 element: <Kitchen />
             },
             {
@@ -86,7 +90,25 @@ export const routes: { layout: string; pages: Route[] }[] = [
                 path: '/analytics',
                 element: <Analytic />
             },
-            
+            {
+                icon: <IoPersonOutline />,
+                name: "Kullanıcılar",
+                subPaths: [
+                    {
+                        icon: <IoPersonOutline />,
+                        name: "Kullanıcılar",
+                        path: '/persons',
+                        element: <Person />
+                    },
+                    {
+                        icon: <MdOutlineSecurity />,
+                        name: "Yetkilendirme",
+                        path: '/authorize',
+                        element: <Authorize />
+                    },
+                ]
+            }
+
         ]
     },
     {
