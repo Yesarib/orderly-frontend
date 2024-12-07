@@ -3,12 +3,8 @@ import React from "react"
 import { TbCategoryPlus } from "react-icons/tb";
 import { SlOptionsVertical } from "react-icons/sl";
 import { BiCategory } from "react-icons/bi";
+import { Category } from "../../types/category";
 
-interface Category {
-    id: number,
-    title: string,
-    color: string
-}
 
 interface CategorySidebarProps {
     categories: Category[],

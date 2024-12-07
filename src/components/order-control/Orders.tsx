@@ -7,19 +7,8 @@ import { SlOptions } from "react-icons/sl";
 import { IoPrintSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { products } from "../../mock_data";
+import { Order } from "../../types/Order";
 
-interface Items {
-    productId: number,
-    quantity: number
-}
-
-interface Order {
-    id: number,
-    areaId: number,
-    tableId: string,
-    items: Items[],
-    status: string
-}
 
 interface OrdersProps {
     orders: Order[]
@@ -60,7 +49,7 @@ const Orders: React.FC<OrdersProps> = ({ orders }) => {
                                         <MdTableBar />
                                         <MdChair />
                                     </div>
-                                    <Link to={`/order/${order.id}`} className="mt-4">
+                                    <Link to={`/order/${order.tableId}`} className="mt-4">
                                         <Typography variant="small" className="font-inter font-semibold"> Sipariş Detayı </Typography>
                                     </Link>
                                 </div>

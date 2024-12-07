@@ -5,7 +5,7 @@ import { GiForkKnifeSpoon } from "react-icons/gi";
 import { TbReportAnalytics, TbShoppingBagCheck  } from "react-icons/tb";
 
 import Home from "./pages/dashboard/Home"
-import Order from "./pages/dashboard/Order";
+import OrderControl from "./pages/dashboard/OrderControl";
 import Table from "./pages/dashboard/Table";
 import Product from "./pages/dashboard/Product";
 import Analytic from "./pages/dashboard/Analytic";
@@ -51,7 +51,7 @@ export const routes: { layout: string; pages: Route[] }[] = [
                 icon: <TbShoppingBagCheck />,
                 name: 'Siparişler',
                 path: '/orders',
-                element: <Order />
+                element: <OrderControl />
             },
             {
                 icon: <RiListIndefinite />,
@@ -88,7 +88,7 @@ export const routes: { layout: string; pages: Route[] }[] = [
                 element: <SignIn />
             }
         ]
-    }
+    },
 ]
 
 export default routes
