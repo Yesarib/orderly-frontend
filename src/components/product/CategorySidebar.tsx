@@ -14,7 +14,7 @@ interface CategorySidebarProps {
 
 const CategorySidebar: React.FC<CategorySidebarProps> = ({ categories, setCurrentCategory, currentCategory }) => {
     return (
-        <div className="w-full h-screen flex flex-col border">
+        <div className="w-full h-screen flex flex-col border lg:mt-2 rounded-sm">
             <div className="w-full p-1 flex justify-between items-center">
                 <Button className="flex gap-1 capitalize items-center" variant="text">
                     <TbCategoryPlus className="text-xl" />

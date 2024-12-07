@@ -13,16 +13,38 @@ const Area = () => {
   return (
     <div>
       <Tabs value={activeTab}>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto'>
-          <TabsHeader className="bg-transparent border-b"
+        <div className=''>
+          <TabsHeader
+            className="bg-transparent border-b relative"
             indicatorProps={{
-              className: "bg-green-900/50 shadow-none",
-            }}>
-            {areas.map((area) => (
-              <Tab key={area._id} value={area._id} onClick={() => setActiveTab(area._id)}>
-                <Typography className={`font-inter font-semibold ${activeTab === area._id ? "text-white" : "text-gray-600"} tracking-wider`}> {area.name} </Typography>
-              </Tab>
-            ))}
+              className: "bg-transparent shadow-none",
+            }}
+          >
+            <div className="relative flex">
+              {areas.map((area) => (
+                <Tab
+                  key={area._id}
+                  value={area._id}
+                  onClick={() => setActiveTab(area._id)}
+                  className={`lg:w-32 transition-all duration-300 ease-in-out ${activeTab === area._id ? "text-gray-800 font-bold" : "text-gray-400"
+                    }`}
+                >
+                  <Typography
+                    variant='small'
+                    className="font-inter font-semibold tracking-wider"
+                  >
+                    {area.name}
+                  </Typography>
+                </Tab>
+              ))}
+              <div
+                className=" absolute bottom-0 left-0 h-[2px] bg-red-500 transition-transform duration-300 ease-in-out"
+                style={{
+                  width: `${100 / areas.length}%`,
+                  transform: `translateX(${areas.findIndex(area => area._id === activeTab) * 100}%)`,
+                }}
+              />
+            </div>
           </TabsHeader>
         </div>
         <TabsBody className='w-full h-screen' >
@@ -37,16 +59,16 @@ const Area = () => {
                       {orderForTable ? (
                         <Card
                           key={table._id}
-                          className={`h-36 cursor-pointer rounded-md border border-gray-500/50 shadow-gray-500/50 ${orderForTable ? "bg-red-500/50" : ""}`}
+                          className={`h-36 cursor-pointer rounded-md border border-gray-500/50 shadow-gray-500/50 ${orderForTable ? "bg-red-200/80" : ""}`}
                         >
                           <Link to={`/order/${table._id}`}>
                             <CardBody className='flex flex-col'>
                               <div className='flex px-1 justify-between items-center'>
                                 <div className='flex flex-col -space-y-0.5'>
-                                  <Typography className='text-start font-inter font-semibold'>
+                                  <Typography className='text-start font-inter text-black' variant='small'>
                                     {table.name}
                                   </Typography>
-                                  <Typography variant='small' className={`font-inter ${orderForTable ? "flex" : "hidden"}`}> User Name </Typography>
+                                  <Typography className={`font-inter ${orderForTable ? "flex" : "hidden"} text-[12px]`}> User Name </Typography>
                                 </div>
                                 <div className='flex justify-end'>
                                   <IconButton variant='text'>
@@ -58,7 +80,7 @@ const Area = () => {
                                 <Typography className='text-black font-inter font-bold text-lg'> ₺{totalPrice.toFixed(2)} </Typography>
                               </div>
                               <div className={`${orderForTable ? "flex" : "hidden"}`}>
-                                <Typography variant='small' className='font-inter'> 2s 32dk </Typography>
+                                <Typography variant='small' className='font-inter text-black'> 2s 32dk </Typography>
                               </div>
                             </CardBody>
                           </Link>
@@ -67,11 +89,11 @@ const Area = () => {
                         <Link to={`/order/${table._id}`}>
                           <Card
                             key={table._id}
-                            className={`flex justify-center items-center h-36 cursor-pointer rounded-md border border-gray-500/50 shadow-gray-500/50`}
+                            className={`flex justify-center items-center h-36 cursor-pointer rounded-md border border-gray-400/50 `}
                           >
                             <CardBody className='flex flex-col justify-center items-center'>
                               <div className='flex justify-center items-center'>
-                                <Typography className='text-center font-inter font-semibold'>
+                                <Typography className='text-center font-inter'>
                                   {table.name}
                                 </Typography>
                               </div>

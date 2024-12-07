@@ -16,7 +16,7 @@ const Kitchen = () => {
 
                 <Tabs value={activeTab}>
                     <div className="flex justify-end items-center">
-                        <Button className="flex gap-2 p-5 items-center h-10 capitalize text-gray-800" variant="text">
+                        <Button className="flex gap-2 p-5 items-center h-10 capitalize text-gray-800 hover:bg-transparent" variant="text">
                             <RiSortAlphabetAsc className="text-xl" />
                             <Typography variant="small" className="font-semibold font-inter"> Sırala </Typography>
                         </Button>
@@ -28,16 +28,16 @@ const Kitchen = () => {
                         >
 
                             <Tab value={"preparing"} onClick={() => setActiveTab('preparing')}>
-                                <Button className="flex gap-2 items-center h-10 capitalize text-gray-800" variant="text">
-                                    <RiProgress2Line className="text-lg" />
+                                <div className="flex justify-center lg:w-44 items-center h-10 gap-2">
+                                    <RiProgress2Line className="text-lg mt-0.5" />
                                     <Typography variant="small" className="font-semibold font-inter"> Hazırlanıyor </Typography>
-                                </Button>
+                                </div>
                             </Tab>
                             <Tab value={"prepared"} onClick={() => setActiveTab('prepared')}>
-                                <Button className="flex gap-2 items-center h-10 capitalize text-gray-800" variant="text">
-                                    <RiEyeLine className="text-lg" />
+                                <div className="flex lg:w-44 items-center h-10 gap-2">
+                                    <RiEyeLine className="text-lg mt-0.5" />
                                     <Typography variant="small" className="font-semibold font-inter"> Hazırlanan Siparişler </Typography>
-                                </Button>
+                                </div>
                             </Tab>
                         </TabsHeader>
                     </div>

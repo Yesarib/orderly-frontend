@@ -16,16 +16,16 @@ const Products: React.FC<ProductsProps> = ({ categoryId }) => {
         <div className='w-full h-screen '>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-4 container mx-auto px-4'>
                 {mockProducts && mockProducts.map((product) => (
-                    <Card key={product.id} className="cursor-pointer h-auto shadow-sm rounded-xl border shadow-gray-700">
+                    <Card key={product.id} className="cursor-pointer h-auto shadow-sm rounded-md border border-gray-200 ">
                         <CardHeader className='flex mt-4 shadow-none justify-between items-center gap-2'>
                             <IconButton variant='text'>
-                                <MdOutlineFavoriteBorder className='text-2xl' />
+                                <MdOutlineFavoriteBorder className='text-2xl text-gray-600' />
                             </IconButton>
                             <IconButton variant='text'>
-                                <IoColorFillOutline className='text-2xl' />
+                                <IoColorFillOutline className='text-2xl text-gray-600' />
                             </IconButton>
                             <IconButton variant='text'>
-                                <MdEdit className='text-2xl' />
+                                <MdEdit className='text-2xl text-gray-600' />
                             </IconButton>
                         </CardHeader>
                         <div className='px-4'>

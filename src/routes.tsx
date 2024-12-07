@@ -3,7 +3,7 @@ import { RiListIndefinite } from "react-icons/ri";
 import { HiOutlineTableCells } from "react-icons/hi2";
 import { GiForkKnifeSpoon } from "react-icons/gi";
 import { TbReportAnalytics, TbShoppingBagCheck  } from "react-icons/tb";
-import { FaKitchenSet } from "react-icons/fa6";
+import { CgScreen } from "react-icons/cg";
 
 
 import Home from "./pages/dashboard/Home"
@@ -75,7 +75,7 @@ export const routes: { layout: string; pages: Route[] }[] = [
                 ]
             },
             {
-                icon: <FaKitchenSet />,
+                icon: <CgScreen />,
                 name:"Mutfak",
                 path:"/kitchen",
                 element: <Kitchen />
