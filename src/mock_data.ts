@@ -1,3 +1,5 @@
+import { Roles } from "./types/user"
+
 export const todaysTotalSales = 10000.00
 export const todaysTotalTables = 52
 export const todaysOpenedSales = 1250.00
@@ -293,4 +295,31 @@ export const orders = [
         status: "preparing",
     },
 
+]
+
+export const users = [
+    {
+        id: 1,
+        no: 1,
+        fullName:"Ferhat Yesari",
+        email:"test@gmail.com",
+        phoneNumber:"5552221122",
+        role:Roles.MANAGER,
+    },
+    {
+        id: 2,
+        no: 2,
+        fullName:"Micheal Scofield",
+        email:"msco@gmail.com",
+        phoneNumber:"5552221122",
+        role:Roles.CHECKOUT,
+    },
+    {
+        id: 3,
+        no: 3,
+        fullName:"Andrew Garfield",
+        email:"agar@gmail.com",
+        phoneNumber:"5552221122",
+        role:Roles.WAITER,
+    },
 ]
