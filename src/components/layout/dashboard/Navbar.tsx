@@ -6,7 +6,7 @@ const Navbar = () => {
   const [layout, page] = pathname.split("/").filter((el) => el !== "");
   return (
     <MtNavbar
-      className={` transition-all sticky top-0 z-40 py-3 border-b border-gray-800/50`}
+      className={` transition-all sticky top-0 z-40 py-3 border-b bg-white border-gray-800/50`}
       color='transparent'
       fullWidth
     >
