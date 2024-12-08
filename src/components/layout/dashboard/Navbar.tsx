@@ -6,7 +6,8 @@ const Navbar = () => {
   const [layout, page] = pathname.split("/").filter((el) => el !== "");
   return (
     <MtNavbar
-      className={`rounded-xl transition-all sticky top-0 z-40 py-3 shadow-md shadow-blue-gray-500/5`}
+      className={` transition-all sticky top-0 z-40 py-3 border-b border-gray-800/50`}
+      color='transparent'
       fullWidth
     >
       <div className="flex flex-col-reverse justify-between gap-6 md:flex-row md:items-center">

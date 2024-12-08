@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import OrderPage from '../pages/dashboard/Order'
+import OrderPage from '../pages/order/Order'
 
 const Order = () => {
     return (

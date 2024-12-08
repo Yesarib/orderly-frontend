@@ -23,7 +23,7 @@ export function Sidenav() {
   };
 
   return (
-    <aside className="fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-sm transition-transform duration-300 xl:translate-x-0 border border-blue-gray-200">
+    <aside className="fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-md transition-transform duration-300 xl:translate-x-0 border border-gray-600/50">
       <div className="relative">
         <Link to={"/"} className="flex flex-col justify-center items-start gap-2 lg:mt-8 lg:ml-8 ">
           <div className="flex gap-2">

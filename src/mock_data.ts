@@ -111,66 +111,87 @@ export const categories = [
         color: 'aqua'
     },
     {
-        id: 4,
-        title: "Soğuk İçecekler",
-        color: 'aqua'
+        id: 5,
+        title: "Tatlılar",
+        color: 'pink'
     },
     {
-        id: 4,
-        title: "Soğuk İçecekler",
-        color: 'aqua'
+        id: 6,
+        title: "Aperatifler",
+        color: 'orange'
     },
     {
-        id: 4,
-        title: "Soğuk İçecekler",
-        color: 'aqua'
+        id: 7,
+        title: "Ana Yemekler",
+        color: 'yellow'
     },
     {
-        id: 4,
-        title: "Soğuk İçecekler",
-        color: 'aqua'
+        id: 8,
+        title: "Atıştırmalıklar",
+        color: 'purple'
     },
     {
-        id: 4,
-        title: "Soğuk İçecekler",
-        color: 'aqua'
+        id: 9,
+        title: "Dondurmalar",
+        color: 'lightblue'
     },
     {
-        id: 4,
-        title: "Soğuk İçecekler",
-        color: 'aqua'
+        id: 10,
+        title: "İçecekler",
+        color: 'teal'
     },
     {
-        id: 4,
-        title: "Soğuk İçecekler",
-        color: 'aqua'
+        id: 11,
+        title: "Alkolsüz İçecekler",
+        color: 'lightgreen'
     },
     {
-        id: 4,
-        title: "Soğuk İçecekler",
-        color: 'aqua'
+        id: 12,
+        title: "Alkol İçkiler",
+        color: 'darkred'
     },
     {
-        id: 4,
-        title: "Soğuk İçecekler",
-        color: 'aqua'
+        id: 13,
+        title: "Meyveler",
+        color: 'orange'
     },
     {
-        id: 4,
-        title: "Soğuk İçecekler",
-        color: 'aqua'
+        id: 14,
+        title: "Sebzeler",
+        color: 'green'
     },
     {
-        id: 4,
-        title: "Soğuk İçecekler",
-        color: 'aqua'
+        id: 15,
+        title: "Ekmek ve Ürünleri",
+        color: 'wheat'
     },
     {
-        id: 4,
-        title: "Soğuk İçecekler",
-        color: 'aqua'
+        id: 16,
+        title: "Pizza ve Makarna",
+        color: 'tomato'
     },
-]
+    {
+        id: 17,
+        title: "Süt Ürünleri",
+        color: 'lightyellow'
+    },
+    {
+        id: 18,
+        title: "Beyaz Et",
+        color: 'lightpink'
+    },
+    {
+        id: 19,
+        title: "Kırmızı Et",
+        color: 'darkred'
+    },
+    {
+        id: 20,
+        title: "Deniz Ürünleri",
+        color: 'skyblue'
+    }
+];
+
 
 export const products = [
     {
