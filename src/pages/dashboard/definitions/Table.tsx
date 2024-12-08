@@ -1,8 +1,9 @@
 import { Typography } from '@material-tailwind/react'
 import { HiOutlineTableCells } from 'react-icons/hi2'
-import RegionTableOpr from '../../components/table/RegionTableOpr'
-import TableList from '../../components/table/TableList'
-import { areas } from '../../mock_data' 
+import { areas } from '../../../mock_data'
+import TableList from '../../../components/table/TableList'
+import RegionTableOpr from '../../../components/table/RegionTableOpr'
+
 
 const Table = () => {
   return (

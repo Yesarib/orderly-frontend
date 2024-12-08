@@ -1,9 +1,9 @@
 import { Button, Card, Typography } from "@material-tailwind/react"
 import { IoPersonOutline, IoAddOutline } from "react-icons/io5"
-import { users } from "../../mock_data"
+import { users } from "../../../mock_data"
 import { useState } from "react";
-import { User } from "../../types/user";
-import PersonDetail from "../../components/person/PersonDetail";
+import { User } from "../../../types/user";
+import PersonDetail from "../../../components/person/PersonDetail";
 
 const TABLE_HEAD = ["No", "Ad Soyad", "Email", "Telefon Numarası", "Rol"];
 

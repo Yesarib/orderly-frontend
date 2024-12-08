@@ -1,8 +1,9 @@
 import { useState } from "react"
-import CategorySidebar from "../../components/product/CategorySidebar"
-import { categories } from "../../mock_data"
-import Products from "../../components/product/Products"
-import ProductTopbar from "../../components/product/ProductTopbar"
+import { categories } from "../../../mock_data";
+import CategorySidebar from "../../../components/product/CategorySidebar";
+import ProductTopbar from "../../../components/product/ProductTopbar";
+import Products from "../../../components/product/Products";
+
 
 const Product = () => {
   const [currentCategory, setCurrentCategory] = useState(categories[0].id || 1)

@@ -10,14 +10,14 @@ import { MdOutlineSecurity } from "react-icons/md";
 
 import Home from "./pages/dashboard/Home"
 import OrderControl from "./pages/dashboard/OrderControl";
-import Table from "./pages/dashboard/Table";
-import Product from "./pages/dashboard/Product";
-import Analytic from "./pages/dashboard/Analytic";
+import Table from "./pages/dashboard/definitions/Table";
+import Product from "./pages/dashboard/definitions/Product";
+import Analytic from "./pages/dashboard/analtyics/Analytic";
 import SignIn from "./pages/auth/SignIn";
 import { ReactElement } from "react";
 import Kitchen from "./pages/dashboard/Kitchen";
-import Person from "./pages/dashboard/Person";
-import Authorize from "./pages/dashboard/Authorize";
+import Person from "./pages/dashboard/persons/Person";
+import Authorize from "./pages/dashboard/persons/UserAuthorize";
 
 
 interface RouteBase {
@@ -85,12 +85,6 @@ export const routes: { layout: string; pages: Route[] }[] = [
                 element: <Kitchen />
             },
             {
-                icon: <TbReportAnalytics />,
-                name: 'Raporlar',
-                path: '/analytics',
-                element: <Analytic />
-            },
-            {
                 icon: <IoPersonOutline />,
                 name: "Kullanıcılar",
                 subPaths: [
@@ -107,8 +101,13 @@ export const routes: { layout: string; pages: Route[] }[] = [
                         element: <Authorize />
                     },
                 ]
-            }
-
+            },
+            {
+                icon: <TbReportAnalytics />,
+                name: 'Raporlar',
+                path: '/analytics',
+                element: <Analytic />
+            },
         ]
     },
     {
