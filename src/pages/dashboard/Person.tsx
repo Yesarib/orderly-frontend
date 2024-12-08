@@ -9,6 +9,7 @@ const TABLE_HEAD = ["No", "Ad Soyad", "Email", "Telefon Numarası", "Rol"];
 
 const Person = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [newUserModalOpen, setNewUserModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState<User>();
 
   const handleRowClick = (user: User | undefined) => {
@@ -16,9 +17,10 @@ const Person = () => {
   };
 
   const handleOpen = () => setModalOpen(!modalOpen);
+  const handleNewUserOpen = () => setNewUserModalOpen(!newUserModalOpen);
 
   return (
-    <div className="w-full h-screen flex justify-center mt-4">
+    <div className="w-full h-screen flex justify-center mt-">
       <div className=" lg:w-11/12 border rounded-md border-gray-200 bg-white p-12 flex flex-col">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">
@@ -31,13 +33,15 @@ const Person = () => {
             </div>
           </div>
           <div className="">
-            <Button variant="filled" fullWidth className="flex items-center capitalize bg-green-600 to-green-300 gap-2 shadow-none rounded-sm">
+            <Button
+            onClick={() => handleNewUserOpen()}
+            variant="filled" fullWidth className="flex items-center capitalize bg-green-600 to-green-300 gap-2 shadow-none rounded-sm">
               <IoAddOutline className="text-2xl" />
               <Typography className="font-inter font-semibold"> Ekle </Typography>
             </Button>
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-full lg:mt-4">
           <Card className="h-full w-full">
             <table className="w-full min-w-max table-auto text-left">
               <thead onClick={() => handleRowClick(selectedUser)}>
@@ -124,6 +128,14 @@ const Person = () => {
           open={modalOpen}
           user={selectedUser}
           handleOpen={handleOpen}
+          isNewUser={false}
+        />
+      )}
+      {newUserModalOpen && (
+        <PersonDetail 
+          open={newUserModalOpen}
+          handleOpen={handleNewUserOpen}
+          isNewUser={true}
         />
       )}
     </div>

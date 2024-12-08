@@ -1,9 +1,9 @@
 
 export enum Roles {
-    WAITER = "waiter",
-    KITCHEN = "kitchen",
-    CHECKOUT = "checkout",
-    MANAGER = "manager",
+    WAITER = "Garson",
+    KITCHEN = "Mutfak",
+    CHECKOUT = "Kasa",
+    MANAGER = "Yönetici",
 }
 
 export interface User {
