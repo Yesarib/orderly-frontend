@@ -57,7 +57,7 @@ export function Sidenav() {
                       }
                       color={
                         page.path && currentPath === page.path.split("/")[1]
-                          ? "blue-gray"
+                          ? "green"
                           : "black"
                       }
                       className="flex items-center gap-4 px-4 capitalize"
@@ -83,7 +83,7 @@ export function Sidenav() {
                               {({ isActive }) => (
                                 <Button
                                   variant={isActive ? "gradient" : "text"}
-                                  color={isActive ? "blue-gray" : "black"}
+                                  color={isActive ? "green" : "black"}
                                   className="flex items-center gap-4 capitalize"
                                   fullWidth
                                 >
@@ -106,15 +106,15 @@ export function Sidenav() {
                       <Button
                         variant={
                           page.path && currentPath === page.path.split("/")[1]
-                            ? "text"
+                            ? "gradient"
                             : "text"
                         }
-                        // color={
-                        //   page.path && currentPath === page.path.split("/")[1]
-                        //     ? "blue-gray"
-                        //     : "black"
-                        // }
-                        className={`flex items-center gap-4 px-4 capitalize ${page.path && currentPath === page.path.split('/')[1] ? "bg-green-900/50 text-white" : ""}`}
+                        color={
+                          page.path && currentPath === page.path.split("/")[1]
+                            ? "green"
+                            : "black"
+                        }
+                        className={`flex items-center gap-4 px-4 capitalize`}
                         fullWidth
                       >
                         <div className="text-xl">{page.icon}</div>

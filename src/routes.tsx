@@ -5,19 +5,23 @@ import { GiForkKnifeSpoon } from "react-icons/gi";
 import { TbReportAnalytics, TbShoppingBagCheck } from "react-icons/tb";
 import { CgScreen } from "react-icons/cg";
 import { MdOutlineSecurity } from "react-icons/md";
-
+import { CiSettings } from "react-icons/ci";
+import { GrCafeteria } from "react-icons/gr";
 
 
 import Home from "./pages/dashboard/Home"
 import OrderControl from "./pages/dashboard/OrderControl";
-import Table from "./pages/dashboard/Table";
-import Product from "./pages/dashboard/Product";
-import Analytic from "./pages/dashboard/Analytic";
+import Table from "./pages/dashboard/definitions/Table";
+import Product from "./pages/dashboard/definitions/Product";
+import Analytic from "./pages/dashboard/analtyics/Analytic";
 import SignIn from "./pages/auth/SignIn";
 import { ReactElement } from "react";
 import Kitchen from "./pages/dashboard/Kitchen";
-import Person from "./pages/dashboard/Person";
-import Authorize from "./pages/dashboard/Authorize";
+import Person from "./pages/dashboard/persons/Person";
+import Authorize from "./pages/dashboard/persons/UserAuthorize";
+import CafeSettings from "./pages/dashboard/settings/CafeSettings";
+import { FiPrinter } from "react-icons/fi";
+import PrinterSettings from "./pages/dashboard/settings/PrinterSettings";
 
 
 interface RouteBase {
@@ -85,12 +89,6 @@ export const routes: { layout: string; pages: Route[] }[] = [
                 element: <Kitchen />
             },
             {
-                icon: <TbReportAnalytics />,
-                name: 'Raporlar',
-                path: '/analytics',
-                element: <Analytic />
-            },
-            {
                 icon: <IoPersonOutline />,
                 name: "Kullanıcılar",
                 subPaths: [
@@ -107,14 +105,38 @@ export const routes: { layout: string; pages: Route[] }[] = [
                         element: <Authorize />
                     },
                 ]
+            },
+            {
+                icon: <TbReportAnalytics />,
+                name: 'Raporlar',
+                path: '/analytics',
+                element: <Analytic />
+            },
+            {
+                icon: <CiSettings />,
+                name: 'Ayarlar',
+                subPaths: [
+                    {
+                        icon: <GrCafeteria />,
+                        name: 'Cafe Ayarları',
+                        path: '/cafe-settings',
+                        element: <CafeSettings />
+                    },
+                    {
+                        icon: <FiPrinter />,
+                        name: 'Yazıcı Ayarları',
+                        path: '/printer-settings',
+                        element: <PrinterSettings />
+                    }
+                ]
             }
-
         ]
     },
     {
         layout: 'auth',
         pages: [
             {
+                icon: <TbReportAnalytics />,
                 name: 'Giriş',
                 path: '/sign-in',
                 element: <SignIn />

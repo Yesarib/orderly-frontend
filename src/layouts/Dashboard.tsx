@@ -6,7 +6,7 @@ import routes from "../routes";
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen bg-gray-100/40">
+    <div className="min-h-screen bg-gray-200/30">
       <Sidenav />
       <div className="p-4 xl:ml-80 ">
         <Navbar />
