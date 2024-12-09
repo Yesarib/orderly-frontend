@@ -301,25 +301,48 @@ export const users = [
     {
         id: 1,
         no: 1,
-        fullName:"Ferhat Yesari",
-        email:"test@gmail.com",
-        phoneNumber:"5552221122",
-        role:Roles.MANAGER,
+        fullName: "Ferhat Yesari",
+        email: "test@gmail.com",
+        phoneNumber: "5552221122",
+        role: Roles.MANAGER,
     },
     {
         id: 2,
         no: 2,
-        fullName:"Micheal Scofield",
-        email:"msco@gmail.com",
-        phoneNumber:"5552221122",
-        role:Roles.CHECKOUT,
+        fullName: "Micheal Scofield",
+        email: "msco@gmail.com",
+        phoneNumber: "5552221122",
+        role: Roles.CHECKOUT,
     },
     {
         id: 3,
         no: 3,
-        fullName:"Andrew Garfield",
-        email:"agar@gmail.com",
-        phoneNumber:"5552221122",
-        role:Roles.WAITER,
+        fullName: "Andrew Garfield",
+        email: "agar@gmail.com",
+        phoneNumber: "5552221122",
+        role: Roles.WAITER,
     },
+]
+
+export const companyInfo = {
+    title: "Fibonacci",
+    dayStart: "10:00",
+    dayEnd: "23:59",
+    notificationSound: ["Ses 1", "Ses 2"],
+    workType: ['Masa Siparişi', 'Paket Siparişi', 'Gel Al Sipariş'],
+    socketAdres: "0",
+    screenLockTime: 0,
+    changeTableTime: 0,
+    country: "Turkey",
+    city: 'Elazığ',
+    district: 'Merkez',
+    neighborhood: "A Mahallesi",
+    street: 'B sokak',
+    no: 23,
+    address: " Fibonacci cafe ",
+    zipCode: 23100
+}
+
+export const paymentTypes = [
+    "Nakit", "Kredi Kartı", "Diğer"
 ]

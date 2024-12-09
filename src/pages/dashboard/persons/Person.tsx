@@ -20,7 +20,7 @@ const Person = () => {
   const handleNewUserOpen = () => setNewUserModalOpen(!newUserModalOpen);
 
   return (
-    <div className="w-full h-screen flex justify-center mt-">
+    <div className="w-full h-screen flex justify-center ">
       <div className=" lg:w-11/12 border rounded-md border-gray-200 bg-white p-12 flex flex-col">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">
@@ -34,8 +34,8 @@ const Person = () => {
           </div>
           <div className="">
             <Button
-            onClick={() => handleNewUserOpen()}
-            variant="filled" fullWidth className="flex items-center capitalize bg-green-600 to-green-300 gap-2 shadow-none rounded-sm">
+              onClick={() => handleNewUserOpen()}
+              variant="filled" fullWidth className="flex items-center capitalize bg-green-600 to-green-300 gap-2 shadow-none rounded-sm">
               <IoAddOutline className="text-2xl" />
               <Typography className="font-inter font-semibold"> Ekle </Typography>
             </Button>
@@ -132,7 +132,7 @@ const Person = () => {
         />
       )}
       {newUserModalOpen && (
-        <PersonDetail 
+        <PersonDetail
           open={newUserModalOpen}
           handleOpen={handleNewUserOpen}
           isNewUser={true}
