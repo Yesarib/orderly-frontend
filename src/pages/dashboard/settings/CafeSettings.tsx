@@ -3,6 +3,7 @@ import { CiSettings } from 'react-icons/ci'
 import GeneralSettings from '../../../components/settings/GeneralSettings'
 import PaymentSettings from '../../../components/settings/PaymentSettings'
 import AddressInformation from '../../../components/settings/AddressInformation'
+import { companyInfo } from '../../../mock_data'
 
 const CafeSettings = () => {
 
@@ -11,7 +12,7 @@ const CafeSettings = () => {
     {
       title:'Genel Ayarlar',
       value: 'general-settings',
-      element: <GeneralSettings />
+      element: <GeneralSettings company={companyInfo} />
     },
     {
       title:"Ödeme Ayaları",

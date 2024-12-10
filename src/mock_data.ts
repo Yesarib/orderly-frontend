@@ -1,3 +1,4 @@
+import { WorkType } from "./types/company"
 import { Roles } from "./types/user"
 
 export const todaysTotalSales = 10000.00
@@ -329,8 +330,8 @@ export const companyInfo = {
     dayStart: "10:00",
     dayEnd: "23:59",
     notificationSound: ["Ses 1", "Ses 2"],
-    workType: ['Masa Siparişi', 'Paket Siparişi', 'Gel Al Sipariş'],
-    socketAdres: "0",
+    workType: WorkType.TABLE_ORDER,
+    socketAdress: "0",
     screenLockTime: 0,
     changeTableTime: 0,
     country: "Turkey",
@@ -340,7 +341,7 @@ export const companyInfo = {
     street: 'B sokak',
     no: 23,
     address: " Fibonacci cafe ",
-    zipCode: 23100
+    zipCode: "23100"
 }
 
 export const paymentTypes = [
