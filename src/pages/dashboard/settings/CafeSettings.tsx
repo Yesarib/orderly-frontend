@@ -22,7 +22,7 @@ const CafeSettings = () => {
     {
       title:'Adres Bilgileri',
       value:'address-information',
-      element: <AddressInformation />
+      element: <AddressInformation company={companyInfo} />
     }
   ]
   
