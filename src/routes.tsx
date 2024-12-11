@@ -4,9 +4,10 @@ import { HiOutlineTableCells } from "react-icons/hi2";
 import { GiForkKnifeSpoon } from "react-icons/gi";
 import { TbReportAnalytics, TbShoppingBagCheck } from "react-icons/tb";
 import { CgScreen } from "react-icons/cg";
-import { MdOutlineSecurity } from "react-icons/md";
+import { MdOutlineSecurity, MdOutlineQrCodeScanner } from "react-icons/md";
 import { CiSettings } from "react-icons/ci";
 import { GrCafeteria } from "react-icons/gr";
+
 
 
 import Home from "./pages/dashboard/Home"
@@ -22,6 +23,7 @@ import Authorize from "./pages/dashboard/persons/UserAuthorize";
 import CafeSettings from "./pages/dashboard/settings/CafeSettings";
 import { FiPrinter } from "react-icons/fi";
 import PrinterSettings from "./pages/dashboard/settings/PrinterSettings";
+import QRHome from "./pages/qr-menu/Home";
 
 
 interface RouteBase {
@@ -30,7 +32,7 @@ interface RouteBase {
 }
 
 interface MainRoute extends RouteBase {
-    path: string;
+    path?: string;
     title?: string,
     element: ReactElement;
     subPaths?: undefined;
@@ -38,7 +40,7 @@ interface MainRoute extends RouteBase {
 
 interface SubRoute extends RouteBase {
     subPaths: {
-        icon: ReactElement;
+        icon?: ReactElement;
         name: string;
         path: string;
         element: ReactElement;
@@ -61,6 +63,7 @@ export const routes: { layout: string; title?: string, pages: Route[] }[] = [
                 path: '/home',
                 element: <Home />
             },
+
             {
                 icon: <TbShoppingBagCheck />,
                 name: 'Siparişler',
@@ -147,6 +150,18 @@ export const routes: { layout: string; title?: string, pages: Route[] }[] = [
             }
         ]
     },
+    {
+        layout: 'qr-menu',
+        title: 'QR Menü',
+        pages: [
+            {
+                icon: <MdOutlineQrCodeScanner />,
+                name: 'QR Menu',
+                path: '/home',
+                element: <QRHome />
+            },
+        ]
+    }
 ]
 
 export default routes

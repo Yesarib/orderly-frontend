@@ -45,7 +45,7 @@ export function Sidenav() {
       <div className="mt-2 mx-2">
         {routes.map(({ layout, pages }, key) => (
           <ul key={key} className="mb-4 flex flex-col ">
-            {layout === 'dashboard' && pages.map((page: any) => (
+            {(layout === 'dashboard' || layout === 'qr-menu') && pages.map((page: any) => (
               <li key={page.name}>
                 {page.subPaths ? (
                   <div>
@@ -105,12 +105,16 @@ export function Sidenav() {
                     {() => (
                       <Button
                         variant={
-                          page.path && currentPath === page.path.split("/")[1]
+                          page.path &&
+                            currentPath === page.path.split("/")[1] &&
+                            fullPath.pathname.startsWith(`/${layout}`)
                             ? "gradient"
                             : "text"
                         }
                         color={
-                          page.path && currentPath === page.path.split("/")[1]
+                          page.path &&
+                            currentPath === page.path.split("/")[1] &&
+                            fullPath.pathname.startsWith(`/${layout}`)
                             ? "green"
                             : "black"
                         }
