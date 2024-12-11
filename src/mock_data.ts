@@ -1,3 +1,4 @@
+import { WorkType } from "./types/company"
 import { Roles } from "./types/user"
 
 export const todaysTotalSales = 10000.00
@@ -329,8 +330,8 @@ export const companyInfo = {
     dayStart: "10:00",
     dayEnd: "23:59",
     notificationSound: ["Ses 1", "Ses 2"],
-    workType: ['Masa Siparişi', 'Paket Siparişi', 'Gel Al Sipariş'],
-    socketAdres: "0",
+    workType: WorkType.TABLE_ORDER,
+    socketAdress: "0",
     screenLockTime: 0,
     changeTableTime: 0,
     country: "Turkey",
@@ -340,9 +341,53 @@ export const companyInfo = {
     street: 'B sokak',
     no: 23,
     address: " Fibonacci cafe ",
-    zipCode: 23100
+    zipCode: "23100"
 }
 
 export const paymentTypes = [
     "Nakit", "Kredi Kartı", "Diğer"
 ]
+
+export const mockDailyData = {
+    dailySales: [
+        { hour: "00:00", amount: 0 },
+        { hour: "01:00", amount: 0 },
+        { hour: "02:00", amount: 0 },
+        { hour: "03:00", amount: 0 },
+        { hour: "04:00", amount: 0 },
+        { hour: "05:00", amount: 0 },
+        { hour: "06:00", amount: 0 },
+        { hour: "07:00", amount: 50 },
+        { hour: "08:00", amount: 100 },
+        { hour: "09:00", amount: 150 },
+        { hour: "10:00", amount: 75 },
+        { hour: "11:00", amount: 125 },
+        { hour: "12:00", amount: 200 },
+        { hour: "13:00", amount: 300 },
+        { hour: "14:00", amount: 250 },
+        { hour: "15:00", amount: 325 },
+        { hour: "16:00", amount: 200 },
+        { hour: "17:00", amount: 150 },
+        { hour: "18:00", amount: 100 },
+        { hour: "19:00", amount: 50 },
+        { hour: "20:00", amount: 0 },
+        { hour: "21:00", amount: 0 },
+        { hour: "22:00", amount: 0 },
+        { hour: "23:00", amount: 0 },
+    ],
+    paymentMethods: [
+        { type: "Nakit", amount: 200 },
+        { type: "Kredi Kartı", amount: 125 },
+    ],
+    tableOccupancy: {
+        occupied: 87, // Yüzde
+        empty: 13, // Yüzde
+    },
+    stats: {
+        totalSales: 325.0,
+        totalOrders: 258.0,
+        totalOpenedTables: 6,
+        totalExpenses: 0.0,
+    },
+};
+

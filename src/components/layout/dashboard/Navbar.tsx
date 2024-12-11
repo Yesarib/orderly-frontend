@@ -1,9 +1,17 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Avatar, Breadcrumbs, Button, IconButton, Input, Menu, MenuHandler, MenuItem, MenuList, Navbar as MtNavbar, Typography } from '@material-tailwind/react'
 import { Link, useLocation } from 'react-router-dom'
+import routes from '../../../routes';
 
 const Navbar = () => {
   const { pathname } = useLocation();
   const [layout, page] = pathname.split("/").filter((el) => el !== "");
+
+  const route = routes.find((route) => route.layout === layout);
+  const pageName = route?.pages
+    .flatMap((route: any) => (route.subPaths ? route.subPaths : route))
+    .find((route: any) => route.path?.slice(1) === page);
+
   return (
     <MtNavbar
       className={` transition-all sticky top-0 z-40 py-3 border-b bg-white border-gray-800/50`}
@@ -21,7 +29,7 @@ const Navbar = () => {
                 color="blue-gray"
                 className="font-normal opacity-50 transition-all hover:text-blue-500 hover:opacity-100"
               >
-                {layout}
+                {route?.title}
               </Typography>
             </Link>
             <Typography
@@ -29,11 +37,11 @@ const Navbar = () => {
               color="blue-gray"
               className="font-normal"
             >
-              {page}
+              {pageName?.name}
             </Typography>
           </Breadcrumbs>
           <Typography variant="h6" color="blue-gray">
-            {page}
+            {pageName?.name}
           </Typography>
         </div>
         <div className="flex items-center">

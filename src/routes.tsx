@@ -31,6 +31,7 @@ interface RouteBase {
 
 interface MainRoute extends RouteBase {
     path: string;
+    title?: string,
     element: ReactElement;
     subPaths?: undefined;
 }
@@ -41,6 +42,7 @@ interface SubRoute extends RouteBase {
         name: string;
         path: string;
         element: ReactElement;
+        title?: string
     }[];
     path?: undefined;
     element?: undefined;
@@ -48,9 +50,10 @@ interface SubRoute extends RouteBase {
 
 type Route = MainRoute | SubRoute;
 
-export const routes: { layout: string; pages: Route[] }[] = [
+export const routes: { layout: string; title?: string, pages: Route[] }[] = [
     {
         layout: 'dashboard',
+        title: "Ana Sayfa",
         pages: [
             {
                 icon: <IoHomeOutline />,
@@ -69,6 +72,7 @@ export const routes: { layout: string; pages: Route[] }[] = [
                 name: 'Tanımlamalar',
                 subPaths: [
                     {
+                        title: "",
                         icon: <HiOutlineTableCells />,
                         name: 'Masalar',
                         path: '/tables',
@@ -80,7 +84,7 @@ export const routes: { layout: string; pages: Route[] }[] = [
                         path: '/products',
                         element: <Product />
                     },
-                ]
+                ],
             },
             {
                 icon: <CgScreen />,
