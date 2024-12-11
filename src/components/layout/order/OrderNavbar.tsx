@@ -1,5 +1,5 @@
 import { Button, Input } from "@material-tailwind/react"
-import { Order } from "../../types/order"
+import { Order } from "../../../types/order"
 import React from "react"
 import { TbBasketCancel, TbNote } from "react-icons/tb";
 

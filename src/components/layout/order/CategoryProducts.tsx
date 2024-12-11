@@ -1,7 +1,7 @@
 import { Card, CardBody, IconButton, Typography } from "@material-tailwind/react"
 import React from "react"
-import { products } from "../../mock_data"
-import { Order } from "../../types/Order"
+import { products } from "../../../mock_data"
+import { Order } from "../../../types/order"
 import { FiPlus, FiMinus } from "react-icons/fi";
 
 interface CategoryProductsProps {

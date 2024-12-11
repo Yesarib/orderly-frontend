@@ -45,7 +45,7 @@ export function Sidenav() {
       <div className="mt-2 mx-2">
         {routes.map(({ layout, pages }, key) => (
           <ul key={key} className="mb-4 flex flex-col ">
-            {(layout === 'dashboard' || layout === 'qr-menu') && pages.map((page: any) => (
+            {(layout === 'dashboard') && pages.map((page: any) => (
               <li key={page.name}>
                 {page.subPaths ? (
                   <div>
@@ -102,30 +102,44 @@ export function Sidenav() {
                   </div>
                 ) : (
                   <NavLink to={`/${layout}${page.path}`}>
-                    {() => (
-                      <Button
-                        variant={
-                          page.path &&
-                            currentPath === page.path.split("/")[1] &&
-                            fullPath.pathname.startsWith(`/${layout}`)
-                            ? "gradient"
-                            : "text"
-                        }
-                        color={
-                          page.path &&
-                            currentPath === page.path.split("/")[1] &&
-                            fullPath.pathname.startsWith(`/${layout}`)
-                            ? "green"
-                            : "black"
-                        }
-                        className={`flex items-center gap-4 px-4 capitalize`}
-                        fullWidth
-                      >
-                        <div className="text-xl">{page.icon}</div>
-                        <Typography className="text-sm font-serif font-semibold">
-                          {page.name}
-                        </Typography>
-                      </Button>
+                    {page.isAnotherLayout ? (
+                      <div className="mt-3">
+                        <div className="p-2 mt-2">
+                          <hr />
+                        </div>
+                        <Link to={page.path} className={`flex mt-2 items-center gap-4 px-4 capitalize`}>
+                          <div className="text-xl">{page.icon}</div>
+                          <Typography className="text-sm font-serif font-semibold">
+                            {page.name}
+                          </Typography>
+                        </Link>
+                      </div>
+                    ) : (
+                      () => (
+                        <Button
+                          variant={
+                            page.path &&
+                              currentPath === page.path.split("/")[1] &&
+                              fullPath.pathname.startsWith(`/${layout}`)
+                              ? "gradient"
+                              : "text"
+                          }
+                          color={
+                            page.path &&
+                              currentPath === page.path.split("/")[1] &&
+                              fullPath.pathname.startsWith(`/${layout}`)
+                              ? "green"
+                              : "black"
+                          }
+                          className={`flex items-center gap-4 px-4 capitalize`}
+                          fullWidth
+                        >
+                          <div className="text-xl">{page.icon}</div>
+                          <Typography className="text-sm font-serif font-semibold">
+                            {page.name}
+                          </Typography>
+                        </Button>
+                      )
                     )}
                   </NavLink>
                 )}

@@ -1,5 +1,5 @@
 import React from "react"
-import { Category } from "../../types/category"
+import { Category } from "../../../types/category"
 import { Button, Typography } from "@material-tailwind/react"
 
 interface CategorybarProps {
