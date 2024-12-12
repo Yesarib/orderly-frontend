@@ -2,6 +2,10 @@
 import { Avatar, Breadcrumbs, Button, IconButton, Input, Menu, MenuHandler, MenuItem, MenuList, Navbar as MtNavbar, Typography } from '@material-tailwind/react'
 import { Link, useLocation } from 'react-router-dom'
 import routes from '../../../routes';
+import { IoPersonOutline, IoShareSocial } from 'react-icons/io5';
+import { users } from '../../../mock_data';
+import { MdOutlineManageAccounts } from "react-icons/md";
+import { BiLogOut } from "react-icons/bi";
 
 const Navbar = () => {
   const { pathname } = useLocation();
@@ -12,6 +16,8 @@ const Navbar = () => {
     .flatMap((route: any) => (route.subPaths ? route.subPaths : route))
     .find((route: any) => route.path?.slice(1) === page);
 
+
+  const user = users[0]
   return (
     <MtNavbar
       className={` transition-all sticky top-0 z-40 py-3 border-b bg-white border-gray-800/50`}
@@ -44,33 +50,10 @@ const Navbar = () => {
             {pageName?.name}
           </Typography>
         </div>
-        <div className="flex items-center">
-          <div className="mr-auto md:mr-4 md:w-56">
+        <div className="flex items-center gap-8">
+          <div className="mr-auto md:w-56">
             <Input label="Search" crossOrigin={undefined} />
           </div>
-          <IconButton
-            variant="text"
-            color="blue-gray"
-            className="grid xl:hidden"
-          >
-            icon
-          </IconButton>
-          <Link to="/auth/sign-in">
-            <Button
-              variant="text"
-              color="blue-gray"
-              className="hidden items-center gap-1 px-4 xl:flex normal-case"
-            >
-              Sign In
-            </Button>
-            <IconButton
-              variant="text"
-              color="blue-gray"
-              className="grid xl:hidden"
-            >
-              icon
-            </IconButton>
-          </Link>
           <Menu>
             <MenuHandler>
               <IconButton variant="text" color="blue-gray">
@@ -104,9 +87,67 @@ const Navbar = () => {
               </MenuItem>
             </MenuList>
           </Menu>
+          {user ? (
+            <Menu>
+              <MenuHandler>
+                <Button
+                  variant="filled"
+                  className="flex items-center capitalize gap-2 bg-green-600/70 rounded-2xl"
+                >
+                  <IoPersonOutline className='text-xl' />
+                  <Typography className='font-inter font-semibold' variant='small'> {user.fullName} </Typography>
+                </Button>
+              </MenuHandler>
+              <MenuList>
+                <Typography className='font-inter font-semibold' variant='small'> {user.fullName} </Typography>
+                <MenuItem className='mt-1'>
+                  <Link to={`/profile`} className='flex gap-2 items-center'>
+                    <IoPersonOutline className='text-lg' />
+                    <Typography className='font-inter'> Profil </Typography>
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={`/profile/account`} className='flex gap-2 items-center'>
+                    <MdOutlineManageAccounts className='text-lg' />
+                    <Typography className='font-inter'> Hesap Bilgileri </Typography>
+                  </Link>
+                </MenuItem>
+                <div>
+                  <hr />
+                </div>
+                <MenuItem>
+                  <Menu>
+                    <MenuHandler>
+                      <div className='flex gap-2 items-center'>
+                        <IoShareSocial />
+                        <Typography> Sosyal Medya </Typography>
+                      </div>
+                    </MenuHandler>
+                  </Menu>
+                </MenuItem>
+                <div>
+                  <hr />
+                </div>
+                <MenuItem className='flex items-center gap-2'>
+                  <BiLogOut className='text-lg' />
+                  <Typography className='font-inter'> Çıkış </Typography>
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          ) : (
+            <Link to="/auth/sign-in" className='flex items-center'>
+              <Button
+                variant="text"
+                color="blue-gray"
+                className="hidden items-center gap-1 px-4 xl:flex normal-case"
+              >
+                Sign In
+              </Button>
+            </Link>
+          )}
         </div>
       </div>
-    </MtNavbar>
+    </MtNavbar >
   )
 }
 

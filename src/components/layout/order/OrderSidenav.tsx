@@ -1,10 +1,10 @@
 import { Button, IconButton, Typography } from "@material-tailwind/react";
 import { FaAngleLeft } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { products } from "../../mock_data";
+import { products } from "../../../mock_data";
 import { SlOptionsVertical } from "react-icons/sl";
 import React from "react";
-import { Order } from "../../types/Order";
+import { Order } from "../../../types/order";
 
 interface OrderSidenavProps {
     order: Order | undefined,

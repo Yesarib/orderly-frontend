@@ -4,9 +4,10 @@ import { HiOutlineTableCells } from "react-icons/hi2";
 import { GiForkKnifeSpoon } from "react-icons/gi";
 import { TbReportAnalytics, TbShoppingBagCheck } from "react-icons/tb";
 import { CgScreen } from "react-icons/cg";
-import { MdOutlineSecurity } from "react-icons/md";
+import { MdOutlineSecurity, MdOutlineQrCodeScanner } from "react-icons/md";
 import { CiSettings } from "react-icons/ci";
 import { GrCafeteria } from "react-icons/gr";
+
 
 
 import Home from "./pages/dashboard/Home"
@@ -15,42 +16,19 @@ import Table from "./pages/dashboard/definitions/Table";
 import Product from "./pages/dashboard/definitions/Product";
 import Analytic from "./pages/dashboard/analtyics/Analytic";
 import SignIn from "./pages/auth/SignIn";
-import { ReactElement } from "react";
 import Kitchen from "./pages/dashboard/Kitchen";
 import Person from "./pages/dashboard/persons/Person";
 import Authorize from "./pages/dashboard/persons/UserAuthorize";
 import CafeSettings from "./pages/dashboard/settings/CafeSettings";
 import { FiPrinter } from "react-icons/fi";
 import PrinterSettings from "./pages/dashboard/settings/PrinterSettings";
+import QRHome from "./pages/qr-menu/Home";
+import { MainRoute, SubRoute } from "./types/route";
 
-
-interface RouteBase {
-    icon?: ReactElement;
-    name: string;
-}
-
-interface MainRoute extends RouteBase {
-    path: string;
-    title?: string,
-    element: ReactElement;
-    subPaths?: undefined;
-}
-
-interface SubRoute extends RouteBase {
-    subPaths: {
-        icon: ReactElement;
-        name: string;
-        path: string;
-        element: ReactElement;
-        title?: string
-    }[];
-    path?: undefined;
-    element?: undefined;
-}
 
 type Route = MainRoute | SubRoute;
 
-export const routes: { layout: string; title?: string, pages: Route[] }[] = [
+export const routes: { layout: 'dashboard' | 'auth' | 'qr-menu'; title?: string, pages: Route[] }[] = [
     {
         layout: 'dashboard',
         title: "Ana Sayfa",
@@ -59,13 +37,15 @@ export const routes: { layout: string; title?: string, pages: Route[] }[] = [
                 icon: <IoHomeOutline />,
                 name: 'Ana Sayfa',
                 path: '/home',
-                element: <Home />
+                element: <Home />,
+                isAnotherLayout: false
             },
             {
                 icon: <TbShoppingBagCheck />,
                 name: 'Siparişler',
                 path: '/orders',
-                element: <OrderControl />
+                element: <OrderControl />,
+                isAnotherLayout: false
             },
             {
                 icon: <RiListIndefinite />,
@@ -76,7 +56,7 @@ export const routes: { layout: string; title?: string, pages: Route[] }[] = [
                         icon: <HiOutlineTableCells />,
                         name: 'Masalar',
                         path: '/tables',
-                        element: <Table />
+                        element: <Table />,
                     },
                     {
                         icon: <GiForkKnifeSpoon />,
@@ -90,7 +70,8 @@ export const routes: { layout: string; title?: string, pages: Route[] }[] = [
                 icon: <CgScreen />,
                 name: "Mutfak",
                 path: "/kitchen",
-                element: <Kitchen />
+                element: <Kitchen />,
+                isAnotherLayout: false
             },
             {
                 icon: <IoPersonOutline />,
@@ -132,8 +113,15 @@ export const routes: { layout: string; title?: string, pages: Route[] }[] = [
                         path: '/printer-settings',
                         element: <PrinterSettings />
                     }
-                ]
-            }
+                ],
+            },            
+            {
+                icon: <MdOutlineQrCodeScanner />,
+                name: 'QR Menu',
+                path: '/qr-menu/home',
+                element: <QRHome />,
+                isAnotherLayout: true
+            },
         ]
     },
     {
@@ -147,6 +135,18 @@ export const routes: { layout: string; title?: string, pages: Route[] }[] = [
             }
         ]
     },
+    {
+        layout: 'qr-menu',
+        title: 'QR Menü',
+        pages: [
+            {
+                icon: <IoHomeOutline />,
+                name: 'Ana Sayfa',
+                path: '/home',
+                element: <QRHome />
+            },
+        ]
+    }
 ]
 
 export default routes

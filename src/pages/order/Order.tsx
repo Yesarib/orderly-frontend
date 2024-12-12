@@ -1,11 +1,11 @@
 import { useLocation } from "react-router-dom";
-import OrderNavbar from "../../components/order/OrderNavbar"
-import OrderSidenav from "../../components/order/OrderSidenav"
 import { categories, orders, products } from "../../mock_data";
 import { useEffect, useState } from "react";
-import Categorybar from "../../components/order/Categorybar";
-import CategoryProducts from "../../components/order/CategoryProducts";
-import { Order as OrderTypes } from "../../types/Order";
+import { Order as OrderTypes } from "../../types/order";
+import OrderSidenav from "../../components/layout/order/OrderSidenav";
+import OrderNavbar from "../../components/layout/order/OrderNavbar";
+import Categorybar from "../../components/layout/order/Categorybar";
+import CategoryProducts from "../../components/layout/order/CategoryProducts";
 
 const Order = () => {
   const [currentCategory, setCurrentCategory] = useState(categories[0].id || 0);
