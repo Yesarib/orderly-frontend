@@ -140,8 +140,8 @@ export const routes: { layout: 'dashboard' | 'auth' | 'qr-menu'; title?: string,
         title: 'QR Menü',
         pages: [
             {
-                icon: <MdOutlineQrCodeScanner />,
-                name: 'QR Menu',
+                icon: <IoHomeOutline />,
+                name: 'Ana Sayfa',
                 path: '/home',
                 element: <QRHome />
             },

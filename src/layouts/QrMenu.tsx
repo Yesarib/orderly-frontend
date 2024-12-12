@@ -1,4 +1,3 @@
-import React from 'react'
 import QrMenuSidenav from '../components/layout/qr-menu/QrMenuSidenav'
 import Navbar from '../components/layout/dashboard/Navbar'
 import { Route, Routes } from 'react-router-dom'
