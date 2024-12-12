@@ -101,7 +101,7 @@ export function Sidenav() {
                     )}
                   </div>
                 ) : (
-                  <NavLink to={`/${layout}${page.path}`}>
+                  <div>
                     {page.isAnotherLayout ? (
                       <div className="mt-3">
                         <div className="p-2 mt-2">
@@ -115,40 +115,43 @@ export function Sidenav() {
                         </Link>
                       </div>
                     ) : (
-                      () => (
-                        <Button
-                          variant={
-                            page.path &&
-                              currentPath === page.path.split("/")[1] &&
-                              fullPath.pathname.startsWith(`/${layout}`)
-                              ? "gradient"
-                              : "text"
-                          }
-                          color={
-                            page.path &&
-                              currentPath === page.path.split("/")[1] &&
-                              fullPath.pathname.startsWith(`/${layout}`)
-                              ? "green"
-                              : "black"
-                          }
-                          className={`flex items-center gap-4 px-4 capitalize`}
-                          fullWidth
-                        >
-                          <div className="text-xl">{page.icon}</div>
-                          <Typography className="text-sm font-serif font-semibold">
-                            {page.name}
-                          </Typography>
-                        </Button>
-                      )
+                      <NavLink to={`/${layout}${page.path}`}>
+                        {() => (
+                            <Button
+                              variant={
+                                page.path &&
+                                  currentPath === page.path.split("/")[1] &&
+                                  fullPath.pathname.startsWith(`/${layout}`)
+                                  ? "gradient"
+                                  : "text"
+                              }
+                              color={
+                                page.path &&
+                                  currentPath === page.path.split("/")[1] &&
+                                  fullPath.pathname.startsWith(`/${layout}`)
+                                  ? "green"
+                                  : "black"
+                              }
+                              className={`flex items-center gap-4 px-4 capitalize`}
+                              fullWidth
+                            >
+                              <div className="text-xl">{page.icon}</div>
+                              <Typography className="text-sm font-serif font-semibold">
+                                {page.name}
+                              </Typography>
+                            </Button>
+                          )}
+                      </NavLink>
                     )}
-                  </NavLink>
+                  </div>
+
                 )}
               </li>
             ))}
           </ul>
         ))}
       </div>
-    </aside>
+    </aside >
   );
 }
 
