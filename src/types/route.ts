@@ -4,6 +4,7 @@ import { ReactElement } from "react";
 export interface RouteBase {
     icon?: ReactElement;
     name: string;
+    onSidenav?: boolean
 }
 
 export interface MainRoute extends RouteBase {

@@ -24,6 +24,7 @@ import { FiPrinter } from "react-icons/fi";
 import PrinterSettings from "./pages/dashboard/settings/PrinterSettings";
 import QRHome from "./pages/qr-menu/Home";
 import { MainRoute, SubRoute } from "./types/route";
+import Profile from "./pages/dashboard/Profile";
 
 
 type Route = MainRoute | SubRoute;
@@ -38,14 +39,16 @@ export const routes: { layout: 'dashboard' | 'auth' | 'qr-menu'; title?: string,
                 name: 'Ana Sayfa',
                 path: '/home',
                 element: <Home />,
-                isAnotherLayout: false
+                isAnotherLayout: false,
+                onSidenav: true
             },
             {
                 icon: <TbShoppingBagCheck />,
                 name: 'Siparişler',
                 path: '/orders',
                 element: <OrderControl />,
-                isAnotherLayout: false
+                isAnotherLayout: false,
+                onSidenav: true
             },
             {
                 icon: <RiListIndefinite />,
@@ -65,13 +68,15 @@ export const routes: { layout: 'dashboard' | 'auth' | 'qr-menu'; title?: string,
                         element: <Product />
                     },
                 ],
+                onSidenav: true,
             },
             {
                 icon: <CgScreen />,
                 name: "Mutfak",
                 path: "/kitchen",
                 element: <Kitchen />,
-                isAnotherLayout: false
+                isAnotherLayout: false,
+                onSidenav: true
             },
             {
                 icon: <IoPersonOutline />,
@@ -89,13 +94,15 @@ export const routes: { layout: 'dashboard' | 'auth' | 'qr-menu'; title?: string,
                         path: '/authorize',
                         element: <Authorize />
                     },
-                ]
+                ],
+                onSidenav: true
             },
             {
                 icon: <TbReportAnalytics />,
                 name: 'Raporlar',
                 path: '/analytics',
-                element: <Analytic />
+                element: <Analytic />,
+                onSidenav: true
             },
             {
                 icon: <CiSettings />,
@@ -114,13 +121,22 @@ export const routes: { layout: 'dashboard' | 'auth' | 'qr-menu'; title?: string,
                         element: <PrinterSettings />
                     }
                 ],
-            },            
+                onSidenav: true
+            },
             {
                 icon: <MdOutlineQrCodeScanner />,
                 name: 'QR Menu',
                 path: '/qr-menu/home',
                 element: <QRHome />,
-                isAnotherLayout: true
+                isAnotherLayout: true,
+                onSidenav: true
+            },
+            {
+                name: 'Profil',
+                path: '/profile',
+                element: <Profile />,
+                isAnotherLayout: false,
+                onSidenav: false
             },
         ]
     },
