@@ -1,7 +1,7 @@
 import React from 'react'
 import { User } from '../../types/user'
 import { Button, Card, Input, Typography } from '@material-tailwind/react'
-import { IoPersonOutline } from 'react-icons/io5'
+import Header from './Header'
 
 interface UserInformationProps {
   user: User
@@ -10,16 +10,8 @@ interface UserInformationProps {
 const UserInformation: React.FC<UserInformationProps> = ({ user }) => {  
   return (
     <div className='w-full flex flex-col items-center mt-4 rounded-xl'>
-      <Card className='w-1/2 flex flex-col bg-white p-4 justify-center'>
-        <div className='p-4 flex gap-2 items-center'>
-          <div className='p-2 rounded-md bg-gradient-to-bl from-green-600 to-green-300'>
-            <IoPersonOutline className='text-4xl text-white' />
-          </div>
-          <div className='flex flex-col'>
-            <Typography variant='h5' className='font-inter'> Profil </Typography>
-            <Typography className='font-inter text-[12px]'> Kullanıcı bilgilerinizi güncelleyebilirsiniz.</Typography>
-          </div>
-        </div>
+      <Card className='w-1/2 flex flex-col bg-white p-4 justify-center rounded-sm'>
+        <Header />
         <div className='flex flex-col px-8 mt-2 lg:space-y-6'>
           <Input type="text" variant="standard" defaultValue={user ? user.fullName : ""} label="İsim Soyisim" required crossOrigin={undefined} />
           <Input type="tel" variant="standard" defaultValue={user ? user.phoneNumber : ""} label="Telefon Numarası" required crossOrigin={undefined} />
