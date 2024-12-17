@@ -2,15 +2,21 @@ import { Button, Card, CardBody, IconButton, Typography } from "@material-tailwi
 import { CiSettings } from "react-icons/ci"
 import { packetDetail } from "../../mock_data"
 import { MdDelete } from "react-icons/md";
+import { useState } from "react";
+import DetailForms from "./DetailForms";
 
 const AccountDetails = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalName, setModalName] = useState("");
+    const handleOpen = () => setIsModalOpen(!isModalOpen);
+
     return (
         <div className="w-full flex flex-col p-2">
             <Card className="shadow-md">
                 <CardBody>
                     <div className="flex justify-between items-center">
                         <Typography variant="h6" className="font-serif font-semibold"> Hesabınız </Typography>
-                        <Button variant="text" className="flex items-center capitalize">
+                        <Button onClick={() => { setModalName('changePlan'); handleOpen() }} variant="text" className="flex items-center capitalize">
                             <CiSettings className="text-xl text-green-600" />
                             <Typography variant="small" className="font-inter font-semibold text-green-600"> Planı Değiştir </Typography>
                         </Button>
@@ -61,7 +67,7 @@ const AccountDetails = () => {
                 <CardBody>
                     <div className="flex justify-between items-center">
                         <Typography variant="h6" className="font-serif font-semibold"> Fatura Bilgileri </Typography>
-                        <Button variant="text" className="flex items-center capitalize gap-1">
+                        <Button onClick={() => { setModalName('changeInvoice'); handleOpen() }} variant="text" className="flex items-center capitalize gap-1">
                             <CiSettings className="text-xl text-green-600 mt-[1px]" />
                             <Typography variant="small" className="font-inter font-semibold text-green-600"> Düzenle </Typography>
                         </Button>
@@ -71,6 +77,9 @@ const AccountDetails = () => {
                     </div>
                 </CardBody>
             </Card>
+            {isModalOpen && (
+                <DetailForms changeName={modalName} handleOpen={handleOpen} isOpen={isModalOpen} />
+            )}
         </div>
     )
 }
