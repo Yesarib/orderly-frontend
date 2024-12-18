@@ -25,6 +25,7 @@ import PrinterSettings from "./pages/dashboard/settings/PrinterSettings";
 import QRHome from "./pages/qr-menu/Home";
 import { MainRoute, SubRoute } from "./types/route";
 import Profile from "./pages/dashboard/Profile";
+import Account from "./pages/dashboard/Account";
 
 
 type Route = MainRoute | SubRoute;
@@ -135,6 +136,13 @@ export const routes: { layout: 'dashboard' | 'auth' | 'qr-menu'; title?: string,
                 name: 'Profil',
                 path: '/profile',
                 element: <Profile />,
+                isAnotherLayout: false,
+                onSidenav: false
+            },
+            {
+                name: 'Hesap',
+                path: '/account',
+                element: <Account />,
                 isAnotherLayout: false,
                 onSidenav: false
             },

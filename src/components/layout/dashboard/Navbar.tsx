@@ -110,7 +110,7 @@ const Navbar = () => {
                     </Link>
                   </MenuItem>
                   <MenuItem>
-                    <Link to={`/profile/account`} className='flex gap-2 items-center'>
+                    <Link to={`/dashboard/account`} className='flex gap-2 items-center'>
                       <MdOutlineManageAccounts className='text-lg' />
                       <Typography className='font-inter'> Hesap Bilgileri </Typography>
                     </Link>

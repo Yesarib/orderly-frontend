@@ -391,3 +391,39 @@ export const mockDailyData = {
     },
 };
 
+export const packetDetail = {
+    packetName: 'Lite Paket',
+    maxUser: 3,
+    membershipStartDate: '17.12.2024',
+    membershipEndDate: '17.01.2025',
+    paymentDetail: {
+        bank: "Ziraat",
+        cartNumber: '5314107627789095',
+        issuer: "mastercard",
+        expiryDate: "03/27",
+        cvv: "319"
+    },
+    invoiceDetails: {
+        fullName: 'Ferhat Yesari',
+        address: 'Arif Nihat Asya Sok. Bahcesehir Sitesi C Blok No 26/2',
+        identityNumber: '12354511854',
+        phoneNumber: '5365411154',
+        email: 'test@gmail.com',
+        city: 'Elazığ'
+    },
+    payments: [
+        {
+            status: 'Onaylandı',
+            amount: 660.00,
+            paymentDate: '17.12.20024',
+            paymentType: 'Kredi Kartı'
+        },
+        {
+            status: 'Onaylanmadı',
+            amount: 660.00,
+            paymentDate: '17.12.20024',
+            paymentType: 'Kredi Kartı'
+        },
+    ]
+}
+
