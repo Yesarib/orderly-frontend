@@ -1,6 +1,28 @@
 import { Button, Checkbox, Input, Typography } from "@material-tailwind/react"
+import { useState } from "react"
+import { login } from "../../api/auth.api"
+import { useNavigate } from "react-router-dom"
+import Snackbar from "../../components/SnackBar"
 
 const SignIn = () => {
+    const [emailOrPhoneNumber, setEmailOrPhoneNumber] = useState<string>('')
+    const [password, setPassword] = useState<string>('')
+    const [error, SetError] = useState<string>('')
+    const [snackbarOpen, setSnackbarOpen] = useState<boolean>(false);
+    const navigate = useNavigate()
+
+    const handleSubmit = async () => {
+        const data = await login({ emailOrPhoneNumber, password });
+        if (data.success && (data.data?.access_token && data.data.refresh_token)) {
+            localStorage.setItem('access_token', data.data?.access_token)
+            localStorage.setItem('refresh_token', data.data?.refresh_token)
+            navigate('/dashboard')
+        } else {
+            SetError('Email or Phone Number or Password is incorrect')
+            setSnackbarOpen(true);
+        }
+    }
+
     return (
         <section className="flex gap-4">
             <div className="w-full flex flex-col items-center justify-center lg:w-3/5 mt-24">
@@ -15,6 +37,7 @@ const SignIn = () => {
                                 E-Posta Adresi veya Telefon Numarası
                             </Typography>
                             <Input
+                                onChange={(e) => setEmailOrPhoneNumber(e.target.value)}
                                 size="lg"
                                 placeholder="e-posta@mail.com | 5552223344"
                                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
@@ -25,6 +48,7 @@ const SignIn = () => {
                                 Şifre
                             </Typography>
                             <Input
+                                onChange={(e) => setPassword(e.target.value)}
                                 type="password"
                                 size="lg"
                                 placeholder="********"
@@ -49,21 +73,21 @@ const SignIn = () => {
                                 </a>
                             </Typography>
                         </div>
-                        <Button className="mt-6 capitalize p-3 text-lg rounded-2xl bg-blue-700" fullWidth>
+                        <Button onClick={handleSubmit} className="mt-6 capitalize p-3 text-lg rounded-2xl bg-blue-700" fullWidth>
                             Giriş Yap
                         </Button>
                     </form>
                 </div>
+                <Snackbar message={error} open={snackbarOpen} onClose={() => setSnackbarOpen(false)} />
             </div>
+
             <div className="w-2/5 min-h-screen hidden lg:flex">
                 <img
                     src="https://www.shutterstock.com/shutterstock/photos/1091505905/display_1500/stock-vector-people-in-street-cafe-vector-cartoon-illustration-couple-sitting-at-the-table-and-drinking-coffee-1091505905.jpg"
                     className="h-full w-full object-cover"
                 />
             </div>
-
         </section>
-
     )
 }
 
